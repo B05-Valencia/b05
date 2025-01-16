@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B05 Valencia - Un Sabor del Líbano</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #F1F1E6;
+            font-family: Arial, sans-serif;
+        }
+
+        .background-container {
+            position: relative;
+            max-width: 770px;
+            width: 100%;
+        }
+
+        /* Responsive image */
+        .background-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Button styles */
+        .button {
+            position: absolute;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: transparent;
+            color: transparent;
+        }
+
+        /* Positioning buttons */
+        .button-home { 
+            top: 370px; left: 80px; 
+            width: 2.25cm;
+            height: 1cm;  
+            background-color: transparent;
+            border: 1pt solid #3A5C1E; /* Border size, style, and color */
+            border-style: dashed; /* Paint brush-like dashed effect */
+        }
+        .button-menu { top: 370px; left: 280px; 
+            width: 2.25cm;
+            height: 1cm;  
+            border: 1pt solid #3A5C1E; /* Border size, style, and color */
+            border-style: dashed; /* Paint brush-like dashed effect */
+         }
+        .button-about { top: 370px; left: 440px; 
+            width: 3.25cm;
+            height: 1cm;  
+            border: 1pt solid #3A5C1E; /* Border size, style, and color */
+            border-style: dashed; /* Paint brush-like dashed effect */
+
+        }
+        .button-refresh { top: 200px; left: 390px; }
+        .button-contact {
+            width: 3cm;
+            height: 1cm;  
+            border: 1pt solid #3A5C1E; /* Border size, style, and color */
+            border-style: dashed; /* Paint brush-like dashed effect */
+
+            top: 370px; left: 625px; }
+        .button-reservation {
+            top: 485px;
+            left: 615px;
+            width: 3.33cm;
+            height: 1cm;
+            background-color: transparent;
+            border: 1pt solid #3A5C1E; /* Border size, style, and color */
+            border-style: dashed; /* Paint brush-like dashed effect */
+        }
+
+        /* Hover effects */
+        .button:hover { background-color: transparent; }
+        .button-reservation:hover { background-color: transparent }
+
+        /* Location info box */
+        .location-info {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            display: none;
+        }
+
+        .location-info a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .location-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container">
+        <!-- Background image -->
+        <img src="background-image.jpg" alt="Test Me Photo">
+
+        <!-- Buttons -->
+        <button class="button button-home" id="home-button">Home</button>
+        <button class="button button-about" id="about-button">About Us</button>
+        <button class="button button-refresh" onclick="location.reload()">Refresh</button>
+        <button class="button button-contact" id="contact-button">Contact</button>
+        <button class="button button-menu" id="menu-button">Menu</button>
+        <button class="button button-reservation" id="reservation-button">Reservation</button>
+
+
+        <!-- Location info display -->
+        <div id="location-info" class="location-info">
+            <p>B-05 Restaurent está ubicado en Carmen, Valencia, en la Plaza Vicente Iborra 5.</p>
+            <p><a href="https://maps.app.goo.gl/sy4tkF1gRS1FMXfN8" target="_blank">   Google Maps</a></p>
+        </div>
+    </div>
+
+    <script>
+        const aboutButton = document.getElementById('about-button');
+        const contactButton = document.getElementById('contact-button');
+        const locationInfo = document.getElementById('location-info');
+        const menuButton = document.getElementById('menu-button');
+        const homeButton = document.getElementById('home-button');
+        const reservationButton = document.getElementById('reservation-button');
+
+        // Open aboutus.html in a new tab
+        aboutButton.addEventListener('click', () => {
+            window.open('aboutus.html', '_blank');
+        });
+
+        // Show location info when the "Contact" button is clicked
+        contactButton.addEventListener('click', () => {
+            locationInfo.style.display = 'block';
+        });
+
+        // Hide location info when cursor leaves
+        locationInfo.addEventListener('mouseleave', () => {
+            locationInfo.style.display = 'none';
+        });
+
+        // Open menu.html in a new tab
+        menuButton.addEventListener('click', () => {
+            window.open('menu01.html', '_blank');
+        });
+
+        // Open desc-ES.pdf in a new tab
+        homeButton.addEventListener('click', () => {
+            window.open('desc-menu01.html', '_blank');
+        });
+
+        // Open reserva.html in a new tab
+        reservationButton.addEventListener('click', () => {
+            window.open('reserva.html', '_blank');
+        });
+    </script>
+</body>
+</html>

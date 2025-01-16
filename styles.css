@@ -1,0 +1,159 @@
+/* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #F1F1E6; /* Added background color */
+  color: #3A5C1E; /* Added text color */
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+{
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgba(0, 0, 0, 0);
+  color: blue;
+  padding: 1rem 0;
+}
+
+.navbar .logo {
+  font-family: 'Merriweather', serif;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: red;
+  font-weight: bold;
+  font-size: 1 rem;
+}
+
+/* Hero Section */
+.hero {
+  background: url('images/hero-background.jpg') center/cover no-repeat;
+  color: #F1F1E6;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0; /* Removes default margins */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Keeps the background fixed during scrolling */
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-family: 'Public sans', serif;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color:  #f0f006;
+  color: #341f99;
+  font-weight: bold;
+  margin-top: 1rem;
+  border-radius: 25px;
+}
+
+/* About Section */
+.about-section {
+  padding: 10 rem 0;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+/* Menu Section */
+.menu-section {
+  padding: 2rem 0;
+  text-align: left;
+}
+
+.menu-items {
+  display: box;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.menu-item {
+  flex: 1;
+  max-width: 10px;
+}
+
+.menu-item img {
+  width: 75%;
+  border-radius: 5px;
+}
+
+.menu-item h3 {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: red;
+  color: #fff;
+  padding: 0.25rem 0;
+  text-align: center;
+  font-size: 0.5rem; /* Reduced font size */
+}
+
+/* Social Icons */
+.social-icons img {
+  width: 25px;
+  margin: 0 10px;
+}
+
+/* Popup Styles */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #3A5C1E;
+  width: 80%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.close {
+  color: #3A5C1E;
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+}

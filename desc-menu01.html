@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descripción del Menú - B05 Valencia</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <style>
+        /* Full-page background styling */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            font-family: 'Public Sans', sans-serif;
+            background: url('menu02.jpeg') no-repeat center center; /* Center image */
+            background-size: contain; /* Fit within the viewport without cropping or distorting */
+            background-color: #F1F1E6; /* Fallback background color */
+            color: #3A5C1E;
+        }
+
+        /* Back button styling */
+        .back-button {
+            background-color: #3A5C1E;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 50%; /* Circular button */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 180px; /* Adjusted position */
+            left: 50px;
+        }
+
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+        }
+
+        /* Arrow icon for the button */
+        .back-button::before {
+            content: '←'; /* Unicode left arrow */
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back button -->
+    <button class="back-button" onclick="goBack()"></button>
+
+    <script>
+        /**
+         * Navigate back to index.html
+         */
+        function goBack() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

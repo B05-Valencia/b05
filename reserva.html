@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva - B05 Valencia</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <style>
+        /* Importing Public Sans font */
+        @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Public Sans', sans-serif;
+            color: #3A5C1E;
+            background-color: #F1F1E6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .back-button {
+               background-color: #3A5C1E;
+               color: white;
+               border: none;
+               padding: 10px 15px;
+               font-size: 24px;
+               font-weight: bold;
+               cursor: pointer;
+               border-radius: 50%; /* Circular button */
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               margin: 5px;
+               width: 50px;
+               height: 50px;
+               position: absolute;
+               top: 80px;
+               left: 200px;
+        }
+
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+        }
+
+        .contact-container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-container h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #3A5C1E;
+        }
+
+        .contact-info {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        .contact-info img {
+            vertical-align: middle;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .contact-info a {
+            color: #3A5C1E;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <button class="back-button" onclick="goBack()">←</button>
+
+    <div class="contact-container">
+        <h1>B05 Valencia<br>Reservation</h1>
+        <div class="contact-info">
+            <!-- Phone Icon -->
+            <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone Icon">
+            <span>Call us: <a href="tel:+34617123456743">+34 617 123456743</a></span>
+        </div>
+        <div class="contact-info">
+            <!-- WhatsApp Logo -->
+            <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp Logo">
+            <span>WhatsApp: <a href="https://wa.me/34617123456743" target="_blank">+34 617 123456743</a></span>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * Navigates back to index.html
+         */
+        function goBack() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
