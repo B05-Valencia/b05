@@ -64,9 +64,8 @@
         <img src="background-image.jpg" alt="Test Me Photo">
 
         <!-- Buttons -->
-        <button class="button button-home" id="home-button">Home</button>
+        <button class="button button-home" id="Photos">Home</button>
         <button class="button button-about" id="about-button">About Us</button>
-        <button class="button button-refresh" onclick="location.reload()">Refresh</button>
         <button class="button button-contact" id="contact-button">Contact</button>
         <button class="button button-menu" id="menu-button">Menu</button>
         <button class="button button-reservation" id="reservation-button">Reservation</button>
@@ -79,17 +78,14 @@
     </div>
 
     <script>
-        const aboutButton = document.getElementById('about-button');
         const contactButton = document.getElementById('contact-button');
         const locationInfo = document.getElementById('location-info');
         const menuButton = document.getElementById('menu-button');
-        const homeButton = document.getElementById('home-button');
+        const homeButton = document.getElementById('Photos');
         const reservationButton = document.getElementById('reservation-button');
 
-        // Open aboutus.html in a new tab
-        aboutButton.addEventListener('click', () => {
-            window.open('aboutus.html', '_blank');
-        });
+
+
 
         // Show location info when the "Contact" button is clicked
         contactButton.addEventListener('click', () => {
