@@ -20,8 +20,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-
-            font-family: Arial, sans-serif;   
+            font-family: Arial, sans-serif;
             color: #F1F1E6;
             text-align: center;
         }
@@ -32,7 +31,7 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         /* Button styles */
@@ -60,58 +59,9 @@
     </style>
 </head>
 <body>
-    <div class="background-container">
-        <!-- Background image -->
-        <img src="background-image.jpg" alt="Test Me Photo">
-
-        <!-- Buttons -->
-        <button class="button button-home" id="Photos">Home</button>
-        <button class="button button-about" id="about-button">About Us</button>
-        <button class="button button-contact" id="contact-button">Contact</button>
-        <button class="button button-menu" id="menu-button">Menu</button>
-        <button class="button button-reservation" id="reservation-button">Reservation</button>
-
-        <!-- Location info display -->
-        <div id="location-info" class="location-info">
-            <p>B-05 Restaurent está ubicado en Carmen, Valencia, en la Plaza Vicente Iborra 5.</p>
-            <p><a href="https://maps.app.goo.gl/sy4tkF1gRS1FMXfN8" target="_blank">   Google Maps</a></p>
-        </div>
+    <div class="button-container">
+        <a href="home.html" class="button button-home">Home</a>
+        <a href="about.html" class="button button-about">About Us</a>
     </div>
-
-    <script>
-        const contactButton = document.getElementById('contact-button');
-        const locationInfo = document.getElementById('location-info');
-        const menuButton = document.getElementById('menu-button');
-        const homeButton = document.getElementById('Photos');
-        const reservationButton = document.getElementById('reservation-button');
-
-
-
-
-        // Show location info when the "Contact" button is clicked
-        contactButton.addEventListener('click', () => {
-            locationInfo.style.display = 'block';
-        });
-
-        // Hide location info when cursor leaves
-        locationInfo.addEventListener('mouseleave', () => {
-            locationInfo.style.display = 'none';
-        });
-
-        // Open menu.html in a new tab
-        menuButton.addEventListener('click', () => {
-            window.open('menu01.html', '_blank');
-        });
-
-        // Open desc-ES.pdf in a new tab
-        homeButton.addEventListener('click', () => {
-            window.open('desc-menu01.html', '_blank');
-        });
-
-        // Open reserva.html in a new tab
-        reservationButton.addEventListener('click', () => {
-            window.open('reserva.html', '_blank');
-        });
-    </script>
 </body>
 </html>
