@@ -62,6 +62,33 @@
            content: '←'; /* Unicode left arrow */
            font-size: 24px;
        }
+
+        /* Media query for iPhone screens */
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .back-button {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                top: 60px;
+                left: 20px;
+            }
+        }
     </style>
 </head>
 <body>
