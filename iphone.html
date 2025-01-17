@@ -1,60 +1,61 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Page</title>
+    <title>B05 Valencia - Welcome</title>
     <style>
+        /* General styles */
         body {
             margin: 0;
-            padding: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background: url('background-image.jpg') center/cover no-repeat;
-            background-size: cover; /* Cover the entire screen */
-            background-position: center; /* Center the image */
-            background-repeat: no-repeat; /* Prevent tiling */
-            background-attachment: fixed; /* Optional: Keeps image fixed during scroll */
-            font-family: 'Public Sans', sans-serif;
-
-      
-        }
-
-        .container {
+            background-image: url('background-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            color: white;
             text-align: center;
-            width: 30%;
-            max-width: 50%;
-            padding: 5px;
-            background-color: transparent;
-            border-radius: 10px;
         }
 
+        /* Button container */
+        .button-container {
+            position: absolute;
+            bottom: 10%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Button styles */
         .button {
-            display: block;
-            width: 50%;
-            padding: 7.5px;
-            margin: 5px 0;
-            font-size: 12px;
-            color: #fff;
-            background-color: #3A5C1E;
-            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid white;
             border-radius: 5px;
-            cursor: pointer;
             text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
         .button:hover {
-            background-color: #2e4a16;
+            background-color: white;
+            color: black;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="menu01.html" class="button">Menu</a>
+    <div class="button-container">
+        <a href="menu.html" class="button">Menu</a>
         <a href="location.html" class="button">Location</a>
-        <a href="reserva.html" class="button">Contact Us</a>
+        <a href="photos.html" class="button">Photos</a>
+        <a href="reserve.html" class="button">Reserve</a>
     </div>
 </body>
 </html>
