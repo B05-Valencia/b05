@@ -3,59 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B05 Valencia - Welcome</title>
+    <title>Full-Screen Background</title>
     <style>
-        /* General styles */
+        /* Reset body margin and padding */
         body {
             margin: 0;
-            height: 100vh;
+            padding: 0;
+            width: 100vw; /* Full viewport width */
+            height: 100vh; /* Full viewport height */
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url('background-image.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            font-family: Arial, sans-serif;
+            background-color: #000; /* Fallback color */
+            background-image: url('background-image.jpg'); /* Background image */
+            background-size: cover; /* Ensure the image covers the screen */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent tiling */
+        }
+
+        /* Centered message or content */
+        .content {
             color: white;
             text-align: center;
-        }
-
-        /* Button container */
-        .button-container {
-            position: absolute;
-            bottom: 10%;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        /* Button styles */
-        .button {
-            padding: 15px 30px;
-            font-size: 16px;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.7);
-            border: 2px solid white;
-            border-radius: 5px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: white;
-            color: black;
+            font-size: 1.5rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
 <body>
-    <div class="button-container">
-        <a href="menu.html" class="button">Menu</a>
-        <a href="location.html" class="button">Location</a>
-        <a href="photos.html" class="button">Photos</a>
-        <a href="reserve.html" class="button">Reserve</a>
+    <div class="content">
+        <p>Welcome to B05 Valencia</p>
+        <p>Your perfect dining destination!</p>
     </div>
 </body>
 </html>
