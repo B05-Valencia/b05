@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentic Libanesa</title>
+    <style>
+        body {
+            background-color: #F1F1E6;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            position: relative;
+            text-align: center;
+            color: #3A5C1E;
+        }
+        .background-image {
+            width: 100%;
+            height: auto;
+        }
+        .button {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #3A5C1E;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+        /* Positioning buttons */
+        .home { top: 5%; left: 10%; }
+        .menu { top: 10%; left: 15%; transform: translateX(-50%); }
+        .about { top: 15%; right: 20%; }
+        .contact { bottom: 20%; left: 20%; }
+        .reservation { bottom: 25%; right: 20%; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="background-image.jpg" alt="Authentic Libanesa" class="background-image">
+        <button class="button home">Home</button>
+        <button class="button menu">Menu</button>
+        <button class="button about">About Us</button>
+        <button class="button contact">Contact</button>
+        <button class="button reservation">Reservation</button>
+    </div>
+</body>
+</html>
