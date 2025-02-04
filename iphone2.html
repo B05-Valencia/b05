@@ -23,14 +23,9 @@
             font-weight: bold;
             padding: 20px 0;
         }
-        .menu {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            padding: 20px 0;
-        }
         .menu-item {
+            transform: scale(0.5);
+            transform-origin: top left;
             background: rgba(0, 0, 0, 0.7);
             padding: 7.5px;
             border-radius: 10px;
@@ -51,6 +46,10 @@
 </head>
 <body>
     <div class="container">
+        <div class="contact-info">
+            <p>Contact us at: (123) 456-7890</p>
+            <p>Email: info@b05lebanesecuisine.com</p>
+        </div>
         <div class="logo">B-05 Lebanese Cuisine</div>
         
         <div class="menu">
@@ -62,11 +61,6 @@
                 <img src="dish2.jpg" alt="Lebanese Dish">
                 <p>Authentic Flavors</p>
             </div>
-        </div>
-        
-        <div class="contact-info">
-            <h2>Contact Us</h2>
-            <p>📞 01234323345</p>
         </div>
     </div>
 </body>
