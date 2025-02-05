@@ -14,7 +14,7 @@
             background: url('background-image.jpg') no-repeat center center fixed;
             background-size: cover;
             font-family: Arial, sans-serif;
-            color:#F1F1E6;
+            color: #F1F1E6;
             text-align: center;
         }
         .container {
@@ -28,12 +28,11 @@
             padding: 20px 0;
         }
         .menu-item {
-            transform: scale(0.5);
-            transform-origin: top left;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 7.5px;
-            border-radius: 10px;
-         /*    width: 40%; /* Reduced size by 50% */
+            background: rgba(231, 13, 13, 0.954);
+            padding: 0px;
+            border-radius: 0px;
+            width: 50%;
+            margin:0px auto;
         }
         .menu-item img {
             width: 100%;
@@ -50,15 +49,34 @@
             color: #F1F1E6;
             text-decoration: underline;
         }
+        .button {
+            padding: 15px 30px;
+            font-size: 24px;
+            color: white;
+            background-color: #3A5C1E;
+            border: 2px solid white;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="contact-info">
-            <p> Comida Libanese in Valencia</p>
+            <p>Comida Libanesa Valencia</p>
+            <p>   Plaza Vicent Iborra 5, Valencia</p>
             <p>Find us on <a href="https://maps.app.goo.gl/b5h1M2omhgeXZ7oa9" target="_blank">Google Maps</a></p>
+            <p>📞 Reservation: (+34) 642 91 46 23</p>
         </div>
-        <div class="logo"> Plasa Vicent Iborra 5  Valencia</div>
+        <a href="menu.html" class="button">Menu</a>
+        <div class="logo"></div>
         <div class="menu-item">
             <!-- Your menu item content here -->
         </div>
