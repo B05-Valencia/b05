@@ -3,65 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B05 Valencia - Welcome</title>
+    <title>Reservation at: (+34) 642 91 46 23</title>
+    <meta name="geo.position" content="39.4699; -0.3763">
+    <meta name="geo.placename" content="Valencia, Spain">
+    <meta name="geo.region" content="ES-VC">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400&display=swap');
-
-        /* General styles */
         body {
             margin: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            background-image: url('background-image.jpg');
+            padding: 0;
+            background: url('background-image.jpg') no-repeat center center fixed;
             background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
             font-family: Arial, sans-serif;
             color: #F1F1E6;
             text-align: center;
         }
-
-        /* Button container */
-        .button-container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
+        .container {
+            width: 90%;
+            margin: auto;
+            color: #F1F1E6;
         }
-
-        /* Button styles */
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 20px 0;
+        }
+        .menu-item {
+            background: rgba(231, 13, 13, 0.954);
+            padding: 0px;
+            border-radius: 0px;
+            width: 50%;
+            margin:0px auto;
+        }
+        .menu-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .contact-info {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            font-size: 1.5rem;
+        }
+        .contact-info a {
+            color: #F1F1E6;
+            text-decoration: underline;
+        }
         .button {
             padding: 15px 30px;
-            font-size: 16px;
+            font-size: 24px;
             color: white;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: #3A5C1E;
             border: 2px solid white;
             border-radius: 5px;
             text-decoration: none;
             cursor: pointer;
             transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
         }
-
         .button:hover {
             background-color: rgba(0, 0, 0, 0.9);
-        }
-
-        /* Specific button styles */
-        .button-home, .button-about {
-            font-family: 'Public Sans', sans-serif;
-            font-size: 12px;
         }
     </style>
 </head>
 <body>
-    <div class="button-container">
-        <a href="home.html" class="button button-home">Home</a>
-        <a href="about.html" class="button button-about">About Us</a>
+    <div class="container">
+        <div class="contact-info">
+            <p>Comida Libanesa Valencia</p>
+            <p>   Plaza Vicent Iborra 5, Valencia</p>
+            <p>Find us on <a href="https://maps.app.goo.gl/b5h1M2omhgeXZ7oa9" target="_blank">Google Maps</a></p>
+            <p>📞 Reservation: (+34) 642 91 46 23</p>
+        </div>
+        <a href="menu00.html" class="button">Menu</a>
+        <div class="logo"></div>
+        <div class="menu-item">
+            <!-- Your menu item content here -->
+        </div>
     </div>
 </body>
 </html>
