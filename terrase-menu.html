@@ -1,0 +1,39 @@
+\<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Image</title>
+    <style>
+        /* Reset margin and padding */
+        body, html { 
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        /* Image styling   */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px; /* Optional: Adds rounded corners */
+        }
+
+        /* Ensure the image fits the screen on smartphones */
+        @media only screen and (max-width: 600px) {
+            img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Display the image -->
+    <img src="terraze-menu.jpeg" alt="Terraza Menu Image">
+</body>
+</html>
