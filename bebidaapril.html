@@ -1,39 +1,39 @@
-<!DOCTYPE html>
-<html lang="es">
+\<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terraza Abril - Menú de Bebidas</title>
+    <title>Display Image</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset margin and padding */
+        body, html {
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
-            text-align: center;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
         }
-        .container {
-            width: 90%;
-            margin: auto;
-            max-width: 500px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #d4a017;
-        }
+
+        /* Image styling */
         img {
             max-width: 100%;
-            border-radius: 10px;
+            height: auto;
+            display: block;
+            border-radius: 10px; /* Optional: Adds rounded corners */
+        }
+
+        /* Ensure the image fits the screen on smartphones */
+        @media only screen and (max-width: 600px) {
+            img {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Terraza Abril</h1>
-        <img src="terraze-bebidaes.jpeg" alt="Menú de Bebidas">
-    </div>
+    <!-- Display the image -->
+    <img src="terraze-bebidaes.jpeg" alt="Terraza Bebidas Image">
 </body>
 </html>
