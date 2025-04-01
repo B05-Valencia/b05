@@ -1,39 +1,120 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display Image</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Terraza Bebidas</title>
     <style>
-        /* Reset margin and padding */
+        /* Reset margin and padding with improved mobile defaults */
+        * {
+            box-sizing: border-box;
+        }
         body, html { 
             margin: 0;
             padding: 0;
             height: 100%;
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: #f0f0f0;
+            touch-action: manipulation; /* improves touch responsiveness */
+            -webkit-text-size-adjust: 100%; /* prevents text inflation */
         }
 
-        /* Image styling   */
+        /* Back button styling */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            width: 40px;
+            height: 40px;
+            background-color: #d32f2f;
+            color: white;
+            text-decoration: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+        }
+
+        /* Container for better image control */
+        .image-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        /* Image styling optimized for mobile */
         img {
             max-width: 100%;
+            max-height: 100%;
+            width: auto;
             height: auto;
             display: block;
-            border-radius: 10px; /* Optional: Adds rounded corners */
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* subtle shadow for better visibility */
         }
 
-        /* Ensure the image fits the screen on smartphones */
-        @media only screen and (max-width: 600px) {
+        /* Prevent landscape mode issues */
+        @media screen and (orientation: landscape) {
             img {
-                width: 100%;
+                max-height: 90vh;
+                max-width: 90vw;
             }
+        }
+
+        /* Loading state */
+        .loading {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255,255,255,0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
         }
     </style>
 </head>
 <body>
-    <!-- Display the image -->
-    <img src="terraze-bebidaes.jpeg" alt="Terraza Bebidas Image">
+    <!-- Back button -->
+    <a href="index.html" class="back-button">&#8592;</a>
+
+    <!-- Loading indicator -->
+    <div class="loading" id="loading">
+        <p>Loading image...</p>
+    </div>
+
+    <!-- Image container -->
+    <div class="image-container">
+        <img 
+            src="terraze-bebidaes.jpeg" 
+            alt="Terraza Bebidas" 
+            onload="document.getElementById('loading').style.display = 'none'"
+            onerror="document.getElementById('loading').textContent = 'Error loading image'">
+    </div>
+
+    <script>
+        // Show loading when page starts
+        document.getElementById('loading').style.display = 'flex';
+        
+        // Prevent zooming on double-tap
+        document.addEventListener('dblclick', function(e) {
+            e.preventDefault();
+        }, { passive: false });
+        
+        // Better touch feedback
+        document.addEventListener('touchstart', function() {}, {passive: true});
+    </script>
 </body>
 </html>
