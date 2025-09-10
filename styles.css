@@ -1,159 +1,117 @@
 /* Global Styles */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Public Sans', sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: #F1F1E6; /* Added background color */
-  color: #3A5C1E; /* Added text color */
+  background-color: #F1F1E6; /* corporate background */
+  color: #3A5C1E; /* corporate green */
 }
 
 .container {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
+  padding: 1rem;
 }
 
-{
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Navbar */
 .navbar {
-  background-color: rgba(0, 0, 0, 0);
-  color: blue;
-  padding: 1rem 0;
+  text-align: center;
+  padding: 1rem;
+  background-color: transparent;
 }
 
-.navbar .logo {
-  font-family: 'Merriweather', serif;
-  font-size: 1.5rem;
+.logo {
+  max-width: 200px;
+  height: auto;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
+h2 {
+  text-align: center;
+  margin: 2rem 0 1rem;
+  font-size: 13px;
+  font-weight: 700;
+  border-bottom: 2px solid #3A5C1E;
+  display: inline-block;
+  padding-bottom: 0.25rem;
 }
 
-.nav-links a {
-  color: red;
-  font-weight: bold;
-  font-size: 1 rem;
+.menu-section {
+  padding: 0rem 0;
 }
 
-/* Hero Section */
-.hero {
-  background: url('images/hero-background.jpg') center/cover no-repeat;
-  color: #F1F1E6;
-  height: 100vh;
+/* Menu layout */
+.menu-item {
+  margin-bottom: 0.5rem;
+}
+
+/* Flex row for title, description, and price */
+.menu-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: 0; /* Removes default margins */
-  background-size: cover; /* Ensures the image covers the entire background */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  background-attachment: fixed; /* Keeps the background fixed during scrolling */
+  justify-content: space-between;
+  gap: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.hero h1 {
-  font-size: 3rem;
-  font-family: 'Public sans', serif;
+.menu-row h3,
+.menu-row p {
+  margin: 0;
 }
 
-.cta-button {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  background-color:  #f0f006;
-  color: #341f99;
-  font-weight: bold;
-  margin-top: 1rem;
-  border-radius: 25px;
+.menu-row h3 {
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap; /* prevent wrapping */
+  margin-right: 1rem;
+  flex-shrink: 0;
 }
 
-/* About Section */
-.about-section {
-  padding: 10 rem 0;
-  text-align: center;
+.menu-row p {
+  font-size: 9px;
+  line-height: 1.4;
+  flex: 1; /* fill horizontal space */
+  white-space: normal; /* allow wrapping */
 }
 
-.about-section h2 {
-  font-size: 5rem;
-  margin-bottom: 1rem;
-}
-
-/* Menu Section */
-.menu-section {
-  padding: 2rem 0;
-  text-align: left;
-}
-
-.menu-items {
-  display: box;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.menu-item {
-  flex: 1;
-  max-width: 10px;
-}
-
-.menu-item img {
-  width: 75%;
-  border-radius: 5px;
-}
-
-.menu-item h3 {
-  font-size: 1rem;
-  margin-top: 0.5rem;
-}
-
-/* Footer Styles */
-.footer {
-  background-color: red;
-  color: #fff;
-  padding: 0.25rem 0;
-  text-align: center;
-  font-size: 0.5rem; /* Reduced font size */
-}
-
-/* Social Icons */
-.social-icons img {
-  width: 25px;
-  margin: 0 10px;
-}
-
-/* Popup Styles */
-.popup {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.popup-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #3A5C1E;
-  width: 80%;
-  max-width: 300px;
-  text-align: center;
-}
-
-.close {
+.price {
+  font-weight: 700;
+  font-size: 11px;
   color: #3A5C1E;
-  float: right;
-  font-size: 1.5rem;
-  cursor: pointer;
+  white-space: nowrap; /* avoid wrapping */
+  margin-left: 1rem;
+  flex-shrink: 0;
+}
+
+/* Footer */
+.footer {
+  background-color: #3A5C1E;
+  color: #fff;
+  text-align: center;
+  padding: 0.4rem;
+  font-size: 0.7rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    max-width: 100%;
+    padding: 0.8rem;
+  }
+  .menu-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .menu-row h3,
+  .menu-row p,
+  .price {
+    margin: 0.2rem 0;
+    white-space: normal;
+  }
+  .price {
+    align-self: flex-end;
+  }
 }

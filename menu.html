@@ -1,53 +1,130 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú B-05</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            width: 100%;
-            max-width: 480px;
-            margin: auto;
-            position: relative;
-        }
-        .menu-image {
-            width: 100%;
-            height: auto;
-            max-width: 100%;
-        }
-        .back-button {
-            position: absolute;
-            top: 70px;
-            left: 20px;
-            width: 40px;
-            height: 40px;
-            background-color: #3A5C1E;
-            color: #F1F1E6;
-            text-decoration: none;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B05 Cocina Libanesa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="container">
-        <a href="index.html" class="back-button">&#8592;</a>
-        <img src="menu-v2-1.jpeg" alt="Menú B-05" class="menu-image">
-        <img src="menu-v2-2.jpeg" alt="Menú B-05" class="menu-image">
-    </div>
+  <main class="container">
+
+    <!-- MEZZE FRÍO -->
+    <section class="menu-section">
+      <h2>MEZZE FRÍO</h2>
+      <div class="menu-item"><div class="menu-row"><h3>13. HOJAS DE PARRA</h3><p>Rellenos de arroz, tomate y cebolla (3 / 6 uds.)</p><span class="price">7 / 12 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>11. BERENJENA</h3><p>Crema de berenjenas asadas con limón, tahini, ajo y granada.</p><span class="price">10 / 15 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>5. HUMMUS</h3><p>Deliciosa crema libanesa de garbanzos con tahini, ajo, limón y comino.</p><span class="price">8 / 12 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>6. HUMMUS TRUFADO</h3><p>Con trufa y Parmigiano DOP.</p><span class="price">12 / 16 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>7. HUMMUS BEIRUT</h3><p>Con carne angus salteada y piñones.</p><span class="price">13 / 17 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>14. FATTOUSH</h3><p>Ensalada fresca de lechuga, tomate, pepino, rábano y pan, zumaque.</p><span class="price">12 / 15 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>29. MUHAMMARA</h3><p>Crema de pimiento rojo asado con nueces y melaza de granada.</p><span class="price">12 / 16 </span></div></div>
+    </section>
+
+    <!-- MEZZE CALIENTE -->
+    <section class="menu-section">
+      <h2>MEZZE CALIENTE</h2>
+      <div class="menu-item"><div class="menu-row"><h3>8. RAKA QUESO</h3><p>Quesos crujientes rellenos de feta y mozzarella (3 / 6 uds.)</p><span class="price">7 / 12 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>12. FALAFEL</h3><p>Garbanzos molidos, cebolla, ajo, tomate, perejil, tahini y pan (2 / 5 uds.)</p><span class="price">5 / 12 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>10. BATATA HARRA</h3><p>Patatas doradas salteadas con ajo, cilantro fresco, limón y pimentón dulce.</p><span class="price">10 / 14 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>9. KEBBE</h3><p>Croqueta de carne angus y bulgur, crujiente por fuera, tierna por dentro (2 / 4 uds.)</p><span class="price">7 / 12 </span></div></div>
+    </section>
+
+    <!-- TAPAS -->
+    <section class="menu-section">
+      <h2>TAPAS</h2>
+      <div class="menu-item"><div class="menu-row"><h3>45. SAMBOUSIC QUESO</h3><p>Empanadillas libanesas rellenas de quesos (feta y mozzarella), fritas.</p><span class="price">2.50 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>44. RAKAKAT</h3><p>1 ud.</p><span class="price">2.40 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>42. HOJAS DE PARRA</h3><p>1 ud.</p><span class="price">2.30 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>46. SAMBOUSIC CARNE</h3><p>Empanadillas libanesas rellenas de carne.</p><span class="price">2.60 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>47. FATAYER</h3><p>Empanada libanesa rellena de espinacas frescas, cebolla y granada.</p><span class="price">2.00 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>49. BRAVA LIBANÉS</h3><p>Patatas doradas con ajo local y salsa picante.</p><span class="price">7.00 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>43. FALAFEL</h3><p>1 ud.</p><span class="price">2.50 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>48. KEBBE</h3><p>1 ud.</p><span class="price">3.50 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>50. ROLLITO LIBANÉS DE POLLO</h3><p>10 cm.</p><span class="price">7.00 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>40. HUMMUS</h3><p>1 ud.</p><span class="price">2.20 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>41. BERENJENA</h3><p>1 ud.</p><span class="price">2.20 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>51. ROLLITO LIBANÉS DE CARNE</h3><p>10 cm.</p><span class="price">7.00 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>52. PAN LIBANÉS</h3><p>-</p><span class="price">1.50 </span></div></div>
+    </section>
+
+    <!-- BARBACOA -->
+    <section class="menu-section">
+      <h2>BARBACOA</h2>
+      <div class="menu-item"><div class="menu-row"><h3>25. BBQ CARNE</h3><p>Brochetas de ternera Angus, marinadas y a la parrilla al estilo libanés.</p><span class="price">20 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>22. BBQ MIXTO</h3><p>BBQ Pollo, BBQ Carne y BBQ Kafta.</p><span class="price">25 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>24. BBQ KAFTA</h3><p>Carnes Angus picadas: cebolla/perejil o sujouk especias armenias.</p><span class="price">18 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>23. BBQ POLLO</h3><p>Pollo Grand CUK marinado al estilo taouk, con alioli y rodajas frescas.</p><span class="price">19 </span></div></div>
+    </section>
+
+    <!-- ENSALADAS -->
+    <section class="menu-section">
+      <h2>ENSALADAS</h2>
+      <div class="menu-item"><div class="menu-row"><h3>26. FETA SALAD</h3><p>Feta, lechuga, tomate, pepino, cebolla, pimiento rojo, aceitunas.</p><span class="price">14 </span></div></div>
+    </section>
+
+    <!-- SHAWARMA -->
+    <section class="menu-section">
+      <h2>SHAWARMA</h2>
+      <div class="menu-item"><div class="menu-row"><h3>17. TABLA SHAWARMA CARNE</h3><p>Ternera Angus marinada con pan libanés, ensalada fresca, patatas especiadas y tahini casero.</p><span class="price">20 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>19. TABLA SHAWARMA POLLO</h3><p>Pechuga de pollo Grand CUK estilo taouk con pan libanés, ensalada fresca, patatas especiadas y salsa de ajo casera.</p><span class="price">19 </span></div></div>
+    </section>
+
+    <!-- MEZZE VEGGIE -->
+    <section class="menu-section">
+      <h2>MEZZE VEGGIE</h2>
+      <div class="menu-item"><div class="menu-row"><h3>16/18. PLATO MIXTO</h3><p>Hummus, arroz con lentejas, falafel, sambousec, hojas de parra, fatayer (2 uds de cada) y ensalada.</p><span class="price">16 / 18 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>21. ROLLITO FALAFEL</h3><p>Falafel, verduras frescas, tahini y encurtidos en pan libanés caliente.</p><span class="price">13 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>27. VEGGIE PLATO</h3><p>Pan libanés relleno de gyro vegetal, patata, encurtidos y salsa tahini.</p><span class="price">17 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>18. ROLLITO LIBANÉS DE CARNE</h3><p>Con ternera marinada, tomate, cebolla y tahini.</p><span class="price">20 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>20. ROLLITO LIBANÉS DE POLLO</h3><p>Con pollo marinado, tomate, cebolla, pepinillos y salsa de ajo.</p><span class="price">16 </span></div></div>
+    </section>
+
+    <!-- MENÚ DEGUSTACIÓN -->
+    <section class="menu-section">
+      <h2>MENÚ DEGUSTACIÓN</h2>
+      <div class="menu-item"><div class="menu-row"><h3>30. MENÚ DEGUSTACIÓN</h3><p>Por persona (mínimo 2). Incluye entrantes fríos (Fattoush, Hummus, Berenjena), entrantes calientes (Hojas de Parra, Falafel, Rakakat, Sambousec, Fatayer) y BBQ Pincho Pollo y Kafta (2 uds de cada). Acompañado de copa de vino o doble Estrella Galicia.</p><span class="price">25 </span></div></div>
+    </section>
+
+    <!-- POSTRES -->
+    <section class="menu-section">
+      <h2>POSTRES</h2>
+      <div class="menu-item"><div class="menu-row"><h3>KANAFE</h3><p>Para 2 personas.</p><span class="price">13 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>BAKLAVA</h3><p>Dulce tradicional de masa filo rellena de nueces y bañada en miel (2 uds).</p><span class="price">7 </span></div></div>
+    </section>
+
+    <!-- BEBIDAS -->
+    <section class="menu-section">
+      <h2>BEBIDAS</h2>
+      <div class="menu-item"><div class="menu-row"><h3>ARAK LIBANÉS</h3><p>-</p><span class="price">7 / 14 / 50 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>CÓCTELES</h3><p>-</p><span class="price">8 / 12 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>CUBATA</h3><p>-</p><span class="price">6 / 10 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>CHUPITO</h3><p>-</p><span class="price">2.5 / 5 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>TINTO VERANO</h3><p>-</p><span class="price">5 / 7 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>ALHAMBRA, ESTRELLA GALICIA, TURIA</h3><p>Tercio / Doble / Tanque / Jarra 1L</p><span class="price">3 / 3.5 / 4.5 / 14 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>CAFÉ</h3><p>Con leche +0.50</p><span class="price">2.50 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>TÉ</h3><p>Con leche +0.50</p><span class="price">2.50 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>TÉ LIBANÉS</h3><p>Jarra</p><span class="price">10 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>AGUA</h3><p>-</p><span class="price">2.50 / 5 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>AGUA CON GAS</h3><p>-</p><span class="price">3 / 5 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>COCA-COLA, FANTA</h3><p>-</p><span class="price">2.50 </span></div></div>
+    </section>
+
+    <!-- VINOS -->
+    <section class="menu-section">
+      <h2>VINOS</h2>
+      <div class="menu-item"><div class="menu-row"><h3>VINO Casa</h3><p>Sencillo y equilibrado, para acompañar cualquier plato.</p><span class="price">4 / 15 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>VINO Magnífico</h3><p>De carácter redondo, con notas frutales y final suave.</p><span class="price">5 / 20 </span></div></div>
+      <div class="menu-item"><div class="menu-row"><h3>VINO Sublime</h3><p>Elegante y expresivo, perfecto para ocasiones especiales.</p><span class="price">7 / 30 </span></div></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>B05 Comida Libanesa · Plaza Vicent Iborra 5, 46003 Valencia</p>
+  </footer>
 </body>
 </html>
-    
