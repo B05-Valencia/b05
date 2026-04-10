@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>B05 Menu - Cocina Libanesa</title>
+  <meta name="description" content="Cocina Libanesa Auténtica - Mezze, Parrilla, Shawarma"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Public Sans', system-ui, sans-serif;
+      background: #F1F1E6;
+      color: #3A5C1E;
+      line-height:1.65;
+      font-size:9px;            /* Exact same tiny size as tapas-menu.html */
+    }
+    .container { max-width:100%; margin:0 auto; padding:0 16px; }
+    header {
+      background:linear-gradient(to bottom,#2C4A18,#3A5C1E);
+      color:white;
+      text-align:center;
+      padding:3rem 1rem 2.5rem;
+    }
+    header h1 { font-size:1.7rem; font-weight:600; margin-bottom:0.6rem; }
+    header p  { font-size:0.725rem; opacity:0.92; }
+    .section { padding:3rem 0; }
+    h2.section-title {
+      font-size:0.65rem;
+      color:#3A5C1E;
+      text-align:center;
+      margin-bottom:2.2rem;
+      position:relative;
+      letter-spacing:1px;
+    }
+    h2.section-title::after {
+      content:''; width:45px; height:3px; background:#3A5C1E;
+      display:block; margin:8px auto 0; border-radius:2px;
+    }
+    .menu-item {
+      margin-bottom:2.8rem;
+      padding-bottom:2.2rem;
+      border-bottom:1px solid #D4D4C2;
+    }
+    .item-header {
+      display:flex; 
+      justify-content:space-between; 
+      align-items:baseline;
+      margin-bottom:1rem; 
+      flex-wrap: nowrap;
+      gap:1rem;
+    }
+    .item-name { 
+      font-size:0.825rem;
+      font-weight:600; 
+      color:#3A5C1E; 
+      flex-shrink: 1;
+    }
+    .item-price { 
+      font-size:0.775rem;
+      font-weight:600; 
+      color:#3A5C1E; 
+      white-space:nowrap; 
+      flex-shrink: 0;
+    }
+    .item-desc  { 
+      font-size:0.625rem;
+      color:#4A6C2E; 
+      line-height:1.65; 
+    }
+    .note {
+      text-align:center; 
+      font-size:0.7rem;
+      color:#3A5C1E; 
+      margin-bottom:2.8rem;
+      background:#F8F8EF; 
+      padding:1.4rem; 
+      border-radius:12px;
+      font-weight:500;
+    }
+    .warning {
+      background:#F8F0E0; 
+      color:#3A5C1E; 
+      padding:1.6rem; 
+      border-radius:14px;
+      margin:3rem 0; 
+      font-size:0.575rem; 
+      text-align:center; 
+      border-left:6px solid #3A5C1E;
+    }
+    footer {
+      background:#3A5C1E; 
+      color:white; 
+      text-align:center; 
+      padding:2.8rem 1rem;
+      font-size:0.55rem; 
+      margin-top:2rem;
+    }
+    @media (min-width:640px) {
+      .container { max-width:780px; padding:0 32px; }
+      header h1 { font-size:2.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>B05</h1>
+    <p>Cocina Libanesa Auténtica</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- MEZZA FRÍO -->
+  <section class="section">
+    <h2 class="section-title">Mezza Frío</h2>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Hummus Clásico</span><span class="item-price">10 €</span></div>
+      <p class="item-desc">Crema tradicional libanesa de garbanzos cocidos lentamente, con tahini, ajo, limón y toque de comino</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Hummus Rosa</span><span class="item-price">12 €</span></div>
+      <p class="item-desc">Con remolacha asada ecológica, de textura cremosa</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Hummus Talía</span><span class="item-price">13 €</span></div>
+      <p class="item-desc">Con albahaca fresca, pistacho y aceite infusionado</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Hummus Trufa</span><span class="item-price">13 €</span></div>
+      <p class="item-desc">Con trufa blanca italiana y Parmigiano Reggiano DOP</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Hummus Beirutí</span><span class="item-price">15 €</span></div>
+      <p class="item-desc">Con carne Angus premium salteada y piñones italianos</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Los 3 Sambousik</span><span class="item-price">10 €</span></div>
+      <p class="item-desc">Un refinado trío libanés: carne especiada, fatayer aromático y delicado pastel de queso en hojaldre fino y crujiente</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Muhammara</span><span class="item-price">13 €</span></div>
+      <p class="item-desc">Crema de pimiento rojo asado y granada, con nueces, pistachos y melaza de granada</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Berenjena</span><span class="item-price">11 €</span></div>
+      <p class="item-desc">Crema de berenjena asada con limón, tahini, ajo, aceite de oliva y melaza de granada</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Al Carbón</span><span class="item-price">13 €</span></div>
+      <p class="item-desc">Berenjena asada al carbón con pepino, tomate, cebolla verde, menta, limón y melaza de granada</p>
+    </div>
+  </section>
+
+  <!-- MEZZA CALIENTE -->
+  <section class="section">
+    <h2 class="section-title">Mezza Caliente</h2>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Kebbe</span><span class="item-price">11 €</span></div>
+      <p class="item-desc">Croqueta de carne y bulgur, crujiente por fuera, tierna por dentro, con salsa de yogur, 3 uds.</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Raka Queso</span><span class="item-price">11 €</span></div>
+      <p class="item-desc">Crujientes de queso rellenos de feta y mozzarella, aromatizados con nigella, 6 uds.</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Hojas de Parra</span><span class="item-price">11 €</span></div>
+      <p class="item-desc">Rellenas de arroz, tomate, cebolla y toque de limón, elaboradas en casa, 6 uds.</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Batata Harra</span><span class="item-price">12 €</span></div>
+      <p class="item-desc">Patatas doradas salteadas con ajo, cilantro fresco, limón y toque de pimentón dulce</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Falafel</span><span class="item-price">12 €</span></div>
+      <p class="item-desc">Falafel tradicional de garbanzos molidos con cebolla, ajo y perejil fresco, 5 uds.</p>
+    </div>
+  </section>
+
+  <!-- ENSALADA & PLATO VEGETARIANO -->
+  <section class="section">
+    <h2 class="section-title">Ensalada & Plato Vegetariano</h2>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Fattoush</span><span class="item-price">14 €</span></div>
+      <p class="item-desc">Ensalada tradicional libanesa de lechuga, tomate, pepino y rábano, aliñada con limón, pan crujiente, aceite de oliva y zumaque</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Plato Vegetariano</span><span class="item-price">26 €</span></div>
+      <p class="item-desc">Hummus, berenjena y arroz libanés aromático, con falafel, hojas de parra, empanada artesanal de espinaca y rollito de queso. Con ensalada mixta y vinagreta casera</p>
+    </div>
+  </section>
+
+  <!-- NUESTRA PARRILLA -->
+  <section class="section">
+    <h2 class="section-title">Nuestra Parrilla</h2>
+    <p style="text-align:center; font-size:0.7rem; color:#4A6C2E; margin-bottom:2rem;">Piedra volcánica · Marinada exclusiva de la casa</p>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name highlight">TAOUK</span></div>
+      <p class="item-desc">Pollo de corral premium marinado en especias libanesas y nuestra marinada exclusiva. Sellado sobre piedra volcánica. Con salsa de ajo casera</p>
+      <div class="item-header" style="margin-top:1rem;">
+        <span class="item-name">2 brochetas</span><span class="item-price">20 €</span>
+      </div>
+      <div class="item-header">
+        <span class="item-name">4 brochetas</span><span class="item-price">35 €</span>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name highlight">MECHWI</span></div>
+      <p class="item-desc">Brochetas de ternera seleccionada, marinadas en especias libanesas exclusivas, jugosas y con sutil toque ahumado. Con salsa picante casera</p>
+      <div class="item-header" style="margin-top:1rem;">
+        <span class="item-name">2 brochetas</span><span class="item-price">25 €</span>
+      </div>
+      <div class="item-header">
+        <span class="item-name">4 brochetas</span><span class="item-price">45 €</span>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name highlight">Parrilla Mixta para Dos</span></div>
+      <p class="item-desc">Cuatro brochetas de Pollo y Mechwi servidas con berenjena, patatas wedges doradas, ensalada libanesa fresca, pan libanés y una selección de salsas caseras de ajo y chimichurri.</p>
+      <div class="item-header" style="margin-top:1.5rem;">
+        <span class="item-price" style="font-size:0.969rem;">49 €</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIRAS -->
+  <section class="section">
+    <h2 class="section-title">Tiras</h2>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name highlight">Tiras de Carne</span></div>
+      <p class="item-desc">Finas tiras de lomo bajo de ternera premium al estilo libanés, marinadas en una mezcla de especias aromáticas exclusivas y acompañadas de una pequeña ensalada libanesa.</p>
+      <div class="item-header" style="margin-top:1rem;">
+        <span class="item-name">Individual</span><span class="item-price">24 €</span>
+      </div>
+      <div class="item-header">
+        <span class="item-name">Compartir</span><span class="item-price">39 €</span>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name highlight">Tiras de Pollo</span></div>
+      <p class="item-desc">Finas tiras de pollo de corral premium, marinadas en limón fresco, ajo y especias aromáticas exclusivas, acompañadas de una pequeña ensalada libanesa.</p>
+      <div class="item-header" style="margin-top:1rem;">
+        <span class="item-name">Individual</span><span class="item-price">20 €</span>
+      </div>
+      <div class="item-header">
+        <span class="item-name">Compartir</span><span class="item-price">34 €</span>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name highlight">Tira Mixta para Dos</span></div>
+      <p class="item-desc">Pollo y ternera, servida con hummus artesanal, patatas wedges, ensalada libanesa fresca, pan libanés caliente y una selección de salsas caseras de ajo y tahini.</p>
+      <div class="item-header" style="margin-top:1.5rem;">
+        <span class="item-price" style="font-size:0.969rem;">47 €</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIAS -->
+  <section class="section">
+    <h2 class="section-title">Experiencias <span style="font-size:0.7rem; font-weight:normal;">(Mínimo 2 personas)</span></h2>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name highlight">Mezza Libanesa</span><span class="item-price">35 € / persona</span></div>
+      <p class="item-desc">Incluye copa de vino o cerveza<br>
+      ► Mezza Frío: Hummus · Berenjena · Muhammara<br>
+      ► Mezza Caliente: Kebbe · Hojas de Parra · Empanada Espinaca · Carne · Queso<br>
+      ► Ensalada: Fattoush<br>
+      ► BBQ: Taouk + Mechwi<br>
+      ► Incluye: Salsa alioli · Salsa libanesa · Patatas wedges</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name highlight">Experiencia Libanesa</span><span class="item-price">26 € / persona</span></div>
+      <p class="item-desc">Incluye copa de vino o cerveza<br>
+      ► Mezza Frío: Hummus · Berenjena<br>
+      ► Mezza Caliente: Falafel · Hojas de Parra · Empanada Espinaca · Carne · Queso<br>
+      ► Ensalada: Ensalada fresca con vinagreta casera<br>
+      ► BBQ: Tiras de Pollo al estilo libanés<br>
+      ► Incluye: Salsa especial de alioli · Patatas wedges</p>
+    </div>
+  </section>
+
+  <!-- POSTRES -->
+  <section class="section">
+    <h2 class="section-title">Postres</h2>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Tarta de Manzana</span><span class="item-price">6 €</span></div>
+      <p class="item-desc">Elaboración casera, tierna y aromática</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Baklava • 2 uds.</span><span class="item-price">7 €</span></div>
+      <p class="item-desc">Hojaldre crujiente con miel y pistacho</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header"><span class="item-name">Knafeh Bo5</span><span class="item-price">16 €</span></div>
+      <p class="item-desc">Artesanal • Recién horneado (15 min) • Para dos personas</p>
+    </div>
+  </section>
+
+  <div class="warning">
+    <strong>IMPORTANTE:</strong> Todos nuestros platos contienen frutos secos y sésamo. Si padece alguna alergia, informe a nuestro personal.
+  </div>
+
+</main>
+
+<footer>
+  <p>B05 Cocina Libanesa © 2026 | Sabores auténticos del Líbano • v15</p>
+</footer>
+
+</body>
+</html>
