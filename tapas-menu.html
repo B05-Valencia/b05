@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>B05 Menu - Mezze • Tapas Libanesas</title>
+  <meta name="description" content="Authentic Lebanese Mezze & Tapas"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Public Sans', system-ui, sans-serif;
+      background: #F1F1E6;
+      color: #3A5C1E;
+      line-height:1.65;
+      font-size:9px;            /* 50% of previous 18px */
+    }
+    .container { max-width:100%; margin:0 auto; padding:0 16px; }
+    header {
+      background:linear-gradient(to bottom,#2C4A18,#3A5C1E);
+      color:white;
+      text-align:center;
+      padding:3rem 1rem 2.5rem;
+    }
+    header h1 { font-size:1.7rem; font-weight:600; margin-bottom:0.6rem; }   /* 50% of 3.4rem */
+    header p  { font-size:0.725rem; opacity:0.92; }                         /* 50% of 1.45rem */
+    .section { padding:3rem 0; }
+    h2.section-title {
+      font-size:0.65rem;        /* 50% of previous 1.3rem */
+      color:#3A5C1E;
+      text-align:center;
+      margin-bottom:2.2rem;
+      position:relative;
+      letter-spacing:1px;
+    }
+    h2.section-title::after {
+      content:''; width:45px; height:3px; background:#3A5C1E;
+      display:block; margin:8px auto 0; border-radius:2px;
+    }
+    .menu-item {
+      margin-bottom:2.8rem;
+      padding-bottom:2.2rem;
+      border-bottom:1px solid #D4D4C2;
+    }
+    .item-header {
+      display:flex; justify-content:space-between; align-items:baseline;
+      margin-bottom:1rem; flex-wrap:wrap; gap:1rem;
+    }
+    .item-name { 
+      font-size:0.825rem;       /* 50% of previous 1.65rem */
+      font-weight:600; 
+      color:#3A5C1E; 
+    }
+    .item-price { 
+      font-size:0.775rem;       /* 50% of previous 1.55rem */
+      font-weight:600; 
+      color:#3A5C1E; 
+      white-space:nowrap; 
+    }
+    .item-desc  { 
+      font-size:0.625rem;       /* 50% of previous 1.25rem */
+      color:#4A6C2E; 
+      line-height:1.65; 
+    }
+    .note {
+      text-align:center; 
+      font-size:0.7rem;         /* 50% of previous 1.4rem */
+      color:#3A5C1E; 
+      margin-bottom:2.8rem;
+      background:#F8F8EF; 
+      padding:1.4rem; 
+      border-radius:12px;
+      font-weight:500;
+    }
+    .warning {
+      background:#F8F0E0; 
+      color:#3A5C1E; 
+      padding:1.6rem; 
+      border-radius:14px;
+      margin:3rem 0; 
+      font-size:0.575rem; 
+      text-align:center; 
+      border-left:6px solid #3A5C1E;
+    }
+    footer {
+      background:#3A5C1E; 
+      color:white; 
+      text-align:center; 
+      padding:2.8rem 1rem;
+      font-size:0.55rem; 
+      margin-top:2rem;
+    }
+    @media (min-width:640px) {
+      .container { max-width:780px; padding:0 32px; }
+      header h1 { font-size:2.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>B05</h1>
+    <p>Authentic Lebanese Cuisine</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- MEZZE • TAPAS LIBANESAS -->
+  <section class="section">
+    <h2 class="section-title">Mezze • Tapas Libanesas</h2>
+    
+    <div class="note">
+      3 € each • minimum order of 3 pieces
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Berenjena</span>
+        <span class="item-price">3 €</span>
+      </div>
+      <p class="item-desc">Charcoal-roasted eggplant blended with tahini, lemon, garlic, virgin olive oil, and pomegranate molasses</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Hummus Clásico</span>
+        <span class="item-price">3 €</span>
+      </div>
+      <p class="item-desc">Chickpea purée, slow-cooked blended with tahini, fresh lemon, garlic, and a delicate touch of cumin</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Muhammara</span>
+        <span class="item-price">3 €</span>
+      </div>
+      <p class="item-desc">Roasted red pepper and pomegranate spread with walnuts, pistachios and pomegranate molasses</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Queso Sambousic × 2 pcs.</span>
+        <span class="item-price">3 €</span>
+      </div>
+      <p class="item-desc">Crispy Lebanese pastries filled with a delicate blend of feta, mozzarella and oriental white cheese</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Carne Sambousic × 2 pcs.</span>
+        <span class="item-price">3 €</span>
+      </div>
+      <p class="item-desc">Traditional Lebanese pastries filled with spiced beef and caramelized onions</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Soujouk Sambousic × 2 pcs.</span>
+        <span class="item-price">3 €</span>
+      </div>
+      <p class="item-desc">Crispy Lebanese pastries filled with beef sujuk, delicately seasoned with traditional Armenian spices</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Fatayer Sambousic × 2 pcs.</span>
+        <span class="item-price">3 €</span>
+      </div>
+      <p class="item-desc">Traditional Lebanese pastries filled with selected ingredients and aromatic Middle Eastern spices</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Falafel × 2 pcs.</span>
+        <span class="item-price">3 €</span>
+      </div>
+      <p class="item-desc">Crispy chickpea fritters with fresh herbs and aromatic spices, fried to golden perfection</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Hojas de Parra Caseras × 3 pcs.</span>
+        <span class="item-price">3 €</span>
+      </div>
+      <p class="item-desc">Tender vine leaves stuffed with aromatic rice, fresh herbs and delicate Middle Eastern spices</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Raka Queso × 3 pcs.</span>
+        <span class="item-price">3 €</span>
+      </div>
+      <p class="item-desc">Crispy pastry rolls filled with feta and mozzarella, delicately flavored with nigella</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Kebbe × 1 pc.</span>
+        <span class="item-price">3,50 €</span>
+      </div>
+      <p class="item-desc">Traditional Lebanese croquette of beef and bulgur, crispy outside and tender within, served with yogurt sauce</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Brava Libanés</span>
+        <span class="item-price">10 €</span>
+      </div>
+      <p class="item-desc">Golden crispy potatoes infused with fresh garlic and served with our house-made spicy sauce</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Rollito Libanés de Pollo</span>
+        <span class="item-price">15 €</span>
+      </div>
+      <p class="item-desc">Lebanese flatbread filled with marinated chicken shawarma, fresh vegetables and traditional sauce</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Rollito Libanés de Carne</span>
+        <span class="item-price">15 €</span>
+      </div>
+      <p class="item-desc">Lebanese flatbread filled with marinated beef shawarma with spices, fresh vegetables and traditional sauce</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Baklava × 1 pc.</span>
+        <span class="item-price">3,50 €</span>
+      </div>
+      <p class="item-desc">Crisp pastry layers filled with nuts and finished with aromatic syrup</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Kanafe para 2 personas</span>
+        <span class="item-price">16 €</span>
+      </div>
+      <p class="item-desc">Warm melted cheese dessert topped with crisp kataifi pastry and delicately finished with aromatic syrup</p>
+    </div>
+  </section>
+
+  <div class="warning">
+    <strong>IMPORTANT:</strong> All our dishes contain nuts and sesame without exception. If you have any allergies, please inform our team before ordering.
+  </div>
+
+</main>
+
+<footer>
+  <p>B05 Lebanese Cuisine © 2026 | Authentic flavors from Lebanon v15</p>
+</footer>
+
+</body>
+</html>
