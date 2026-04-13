@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#3A5C1E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>B05 — Guía de Alergias</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#F1F1E6;
+  --bg2:#EAEADB;
+  --bg3:#E2E2D2;
+  --border:#C8C8AA;
+  --green:#3A5C1E;
+  --green-dk:#2A4414;
+  --green-lt:#567A2E;
+  --muted:#7A8A65;
+  --muted2:#9AAA88;
+  --gold:#C8A84A;
+  --f:'Public Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;-webkit-user-select:none}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--green);font-family:var(--f);min-height:100vh;-webkit-font-smoothing:antialiased;line-height:1.5}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(135deg, var(--green-dk) 0%, var(--green) 50%, var(--green-lt) 100%);
+  padding:48px 24px 36px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  min-height:280px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;bottom:0;
+  background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="40" cy="60" r="1" fill="rgba(241,241,230,0.08)"/><circle cx="160" cy="100" r="1.5" fill="rgba(241,241,230,0.06)"/><circle cx="80" cy="160" r="1" fill="rgba(241,241,230,0.07)"/></svg>');
+  opacity:0.5;
+  z-index:1;
+}
+
+.hero::after{
+  content:'';
+  position:absolute;
+  bottom:-1px;left:0;right:0;
+  height:20px;
+  background:var(--bg);
+  clip-path:ellipse(55% 100% at 50% 100%);
+  z-index:2;
+}
+
+.hero-inner{position:relative;z-index:3}
+
+.hero-eye{
+  font-size:8px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  color:rgba(241,241,230,0.45);
+  margin-bottom:14px;
+  font-weight:700;
+  font-style:italic;
+}
+
+.hero-logo{
+  font-size:108px;
+  font-weight:800;
+  color:var(--bg);
+  line-height:0.9;
+  letter-spacing:-6px;
+  margin-bottom:6px;
+  text-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+.hero-sub{
+  font-size:13px;
+  font-weight:300;
+  font-style:italic;
+  color:rgba(241,241,230,0.65);
+  letter-spacing:1px;
+}
+
+/* ── LANG BAR ── */
+.lang{
+  background:var(--bg2);
+  border-bottom:1px solid var(--border);
+  padding:12px 14px;
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+  position:sticky;
+  top:0;
+  z-index:200;
+  box-shadow:0 2px 8px rgba(0,0,0,0.03);
+}
+
+.lb{
+  font-family:var(--f);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+  padding:8px 16px;
+  border-radius:20px;
+  border:1.5px solid var(--border);
+  background:transparent;
+  color:var(--muted);
+  cursor:pointer;
+  text-decoration:none;
+  transition:all 0.2s ease;
+  touch-action:manipulation;
+}
+
+.lb:active{
+  background:var(--green);
+  color:var(--bg);
+  border-color:var(--green);
+  transform:scale(0.96);
+}
+
+.lb.on{
+  background:var(--green);
+  color:var(--bg);
+  border-color:var(--green);
+}
+
+/* ── CONTENT ── */
+.wrap{max-width:600px;margin:0 auto;padding:0 0 80px}
+
+/* ── SECTION ── */
+.sec{padding:36px 18px 0}
+.sec-hd{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.sec-ln{flex:1;height:1px;background:var(--border)}
+.sec-tt{font-size:10px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:var(--green);white-space:nowrap}
+.sec-items{margin-top:14px}
+
+/* ── ALLERGEN LEGEND ── */
+.allergen-legend{
+  background:#fff;
+  border:1.5px solid var(--border);
+  border-radius:12px;
+  padding:18px 16px;
+  margin:24px 18px;
+}
+
+.legend-title{
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--muted2);
+  margin-bottom:14px;
+}
+
+.legend-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.legend-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:11px;
+  color:var(--muted);
+  font-weight:500;
+}
+
+.legend-emoji{
+  font-size:18px;
+  flex-shrink:0;
+}
+
+/* ── DISH CARD ── */
+.dish-card{
+  background:#fff;
+  border:1px solid #E5DFD0;
+  border-radius:12px;
+  padding:16px;
+  margin:12px 18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+}
+
+.dish-info{
+  flex:1;
+  min-width:0;
+}
+
+.dish-name{
+  font-size:15px;
+  font-weight:700;
+  color:var(--green);
+  margin-bottom:4px;
+  line-height:1.2;
+}
+
+.dish-desc{
+  font-size:11px;
+  color:var(--muted);
+  margin-bottom:8px;
+  line-height:1.5;
+}
+
+.dish-price{
+  font-size:12px;
+  font-weight:600;
+  color:var(--green-lt);
+}
+
+.dish-allergens{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  align-content:flex-start;
+}
+
+.allergen-badge{
+  font-size:16px;
+  width:28px;
+  height:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:8px;
+  flex-shrink:0;
+}
+
+/* ── SPECIAL WARNING ── */
+.warning-box{
+  background:#FFF5E6;
+  border:1.5px solid #C8A070;
+  border-radius:10px;
+  padding:14px 16px;
+  margin:24px 18px;
+  font-size:11px;
+  color:#8A5018;
+  line-height:1.7;
+  text-align:center;
+}
+
+.warning-box strong{
+  font-weight:700;
+}
+
+/* ── FOOTER ── */
+.foot{
+  padding:28px 18px;
+  text-align:center;
+  border-top:1px solid var(--border);
+  margin-top:36px;
+  background:var(--bg2);
+}
+
+.foot-btns{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:16px;
+  flex-direction:column;
+}
+
+.foot-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:13px 22px;
+  border-radius:28px;
+  font-size:13px;
+  font-weight:700;
+  text-decoration:none;
+  transition:all 0.15s ease;
+  touch-action:manipulation;
+  cursor:pointer;
+}
+
+.foot-wa{
+  background:#25D366;
+  color:#fff;
+  letter-spacing:.3px;
+}
+
+.foot-wa:active{
+  transform:scale(0.97);
+  opacity:0.9;
+}
+
+.foot-back{
+  color:var(--green);
+  border:2px solid var(--green);
+}
+
+.foot-back:active{
+  background:var(--green);
+  color:var(--bg);
+  transform:scale(0.97);
+}
+
+.foot-copy{
+  font-size:10px;
+  color:var(--muted2);
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  margin-top:14px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width:360px){
+  .dish-card{
+    padding:12px;
+    margin:10px 14px;
+  }
+  .dish-name{font-size:14px}
+  .sec{padding:30px 14px 0}
+}
+
+@media (max-height:600px){
+  .hero{min-height:220px;padding:32px 24px 28px}
+}
+
+@media (hover:none){
+  .lb:hover{background:inherit;color:inherit}
+}
+</style>
+
+</head>
+<body>
+
+<div class="hero">
+<div class="hero-inner">
+<div class="hero-eye">Guía de Alergias</div>
+<h1 class="hero-logo">B05</h1>
+<div class="hero-sub">Información sobre alérgenos</div>
+</div>
+</div>
+
+<div class="lang">
+<a class="lb" href="menuUS.html">🇬🇧 EN</a>
+<a class="lb" href="menuFR.html">🇫🇷 FR</a>
+<a class="lb on" href="menuES.html">🇪🇸 Menú</a>
+<a class="lb" href="alergic.html">⚠️ Alergias</a>
+<a class="lb" href="drink.html">🍷 Drinks</a>
+</div>
+
+<div class="wrap">
+
+<!-- LEGEND -->
+<div class="allergen-legend">
+<div class="legend-title">Leyenda de Alérgenos</div>
+<div class="legend-grid">
+<div class="legend-item"><span class="legend-emoji">🥜</span> <span>Cacahuete</span></div>
+<div class="legend-item"><span class="legend-emoji">🌰</span> <span>Frutos Secos</span></div>
+<div class="legend-item"><span class="legend-emoji">🌾</span> <span>Gluten</span></div>
+<div class="legend-item"><span class="legend-emoji">🥛</span> <span>Lactosa</span></div>
+<div class="legend-item"><span class="legend-emoji">🐟</span> <span>Pescado</span></div>
+<div class="legend-item"><span class="legend-emoji">🦐</span> <span>Marisco</span></div>
+<div class="legend-item"><span class="legend-emoji">🥚</span> <span>Huevo</span></div>
+<div class="legend-item"><span class="legend-emoji">🌱</span> <span>Sésamo</span></div>
+</div>
+</div>
+
+<!-- MEZZA FRÍO -->
+<div class="sec">
+<div class="sec-hd"><div class="sec-ln"></div><div class="sec-tt">Mezza Frío</div><div class="sec-ln"></div></div>
+<div class="sec-items">
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Hummus Clásico</div>
+<div class="dish-desc">Crema de garbanzos con tahini, ajo, limón y comino</div>
+<div class="dish-price">10 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌱</div>
+<div class="allergen-badge">🌾</div>
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Hummus Rosa</div>
+<div class="dish-desc">Con remolacha asada ecológica</div>
+<div class="dish-price">12 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌱</div>
+<div class="allergen-badge">🌾</div>
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Hummus Talía</div>
+<div class="dish-desc">Con albahaca, pistacho y aceite infusionado</div>
+<div class="dish-price">13 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌰</div>
+<div class="allergen-badge">🌱</div>
+<div class="allergen-badge">🌾</div>
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Hummus Trufa</div>
+<div class="dish-desc">Con trufa blanca y Parmigiano Reggiano</div>
+<div class="dish-price">13 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🥛</div>
+<div class="allergen-badge">🌱</div>
+<div class="allergen-badge">🌾</div>
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Hummus Beirutí</div>
+<div class="dish-desc">Con carne Angus premium y piñones italianos</div>
+<div class="dish-price">15 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌰</div>
+<div class="allergen-badge">🌱</div>
+<div class="allergen-badge">🌾</div>
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Los 3 Sambousik</div>
+<div class="dish-desc">Carne, fatayer y pastel de queso en hojaldre</div>
+<div class="dish-price">10 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🥛</div>
+<div class="allergen-badge">🌾</div>
+<div class="allergen-badge">🥚</div>
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Muhammara</div>
+<div class="dish-desc">Crema de pimiento rojo, nueces, pistachos y granada</div>
+<div class="dish-price">13 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌰</div>
+<div class="allergen-badge">🌱</div>
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Berenjena</div>
+<div class="dish-desc">Crema de berenjena asada con limón y tahini</div>
+<div class="dish-price">11 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌱</div>
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Al Carbón</div>
+<div class="dish-desc">Berenjena asada al carbón con verduras y melaza</div>
+<div class="dish-price">13 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌱</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- MEZZA CALIENTE -->
+<div class="sec">
+<div class="sec-hd"><div class="sec-ln"></div><div class="sec-tt">Mezza Caliente</div><div class="sec-ln"></div></div>
+<div class="sec-items">
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Kebbe</div>
+<div class="dish-desc">Croqueta de carne y bulgur, 3 uds.</div>
+<div class="dish-price">11 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌾</div>
+<div class="allergen-badge">🥚</div>
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Raka Queso</div>
+<div class="dish-desc">Crujientes de queso con feta y mozzarella, 6 uds.</div>
+<div class="dish-price">11 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🥛</div>
+<div class="allergen-badge">🌾</div>
+<div class="allergen-badge">🥚</div>
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Hojas de Parra</div>
+<div class="dish-desc">Rellenas de arroz, tomate y cebolla, 6 uds.</div>
+<div class="dish-price">11 €</div>
+</div>
+<div class="dish-allergens">
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Batata Harra</div>
+<div class="dish-desc">Patatas salteadas con ajo, cilantro y pimentón</div>
+<div class="dish-price">12 €</div>
+</div>
+<div class="dish-allergens">
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Falafel</div>
+<div class="dish-desc">Falafel de garbanzos molidos, 5 uds.</div>
+<div class="dish-price">12 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌱</div>
+<div class="allergen-badge">🌾</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ENSALADAS & VEGETARIANO -->
+<div class="sec">
+<div class="sec-hd"><div class="sec-ln"></div><div class="sec-tt">Ensalada & Vegetariano</div><div class="sec-ln"></div></div>
+<div class="sec-items">
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Fattoush</div>
+<div class="dish-desc">Ensalada libanesa con lechuga, tomate, pan crujiente</div>
+<div class="dish-price">14 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌾</div>
+<div class="allergen-badge">🌱</div>
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Plato Vegetariano</div>
+<div class="dish-desc">Hummus, berenjena, falafel, empanadas y más</div>
+<div class="dish-price">26 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌰</div>
+<div class="allergen-badge">🌱</div>
+<div class="allergen-badge">🌾</div>
+<div class="allergen-badge">🥚</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- PARRILLA -->
+<div class="sec">
+<div class="sec-hd"><div class="sec-ln"></div><div class="sec-tt">Nuestra Parrilla</div><div class="sec-ln"></div></div>
+<div class="sec-items">
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Taouk</div>
+<div class="dish-desc">Pollo premium marinado, 2 brochetas</div>
+<div class="dish-price">20 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌱</div>
+<div class="allergen-badge">🌾</div>
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Mechwi</div>
+<div class="dish-desc">Brochetas de ternera, 2 brochetas</div>
+<div class="dish-price">25 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌱</div>
+<div class="allergen-badge">🌾</div>
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Parrilla Mixta para Dos</div>
+<div class="dish-desc">Taouk, Mechwi, berenjena, patatas y salsas</div>
+<div class="dish-price">49 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌱</div>
+<div class="allergen-badge">🌾</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- TIRAS -->
+<div class="sec">
+<div class="sec-hd"><div class="sec-ln"></div><div class="sec-tt">Tiras</div><div class="sec-ln"></div></div>
+<div class="sec-items">
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Tiras de Carne</div>
+<div class="dish-desc">Lomo bajo de ternera premium, individual</div>
+<div class="dish-price">24 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌱</div>
+<div class="allergen-badge">🌾</div>
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Tiras de Pollo</div>
+<div class="dish-desc">Pollo premium marinado en limón y ajo, individual</div>
+<div class="dish-price">20 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌱</div>
+<div class="allergen-badge">🌾</div>
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Tira Mixta para Dos</div>
+<div class="dish-desc">Pollo y ternera con hummus, patatas y salsas</div>
+<div class="dish-price">47 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌱</div>
+<div class="allergen-badge">🌾</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- EXPERIENCIAS -->
+<div class="sec">
+<div class="sec-hd"><div class="sec-ln"></div><div class="sec-tt">Experiencias</div><div class="sec-ln"></div></div>
+<div class="sec-items">
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Mezza Libanesa (Signature)</div>
+<div class="dish-desc">Experiencia completa para 2+ personas con copa de vino/cerveza</div>
+<div class="dish-price">35 € /persona</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌰</div>
+<div class="allergen-badge">🌱</div>
+<div class="allergen-badge">🌾</div>
+<div class="allergen-badge">🥚</div>
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Experiencia Libanesa (Classic)</div>
+<div class="dish-desc">Experiencia completa para 2+ personas con copa de vino/cerveza</div>
+<div class="dish-price">26 € /persona</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌰</div>
+<div class="allergen-badge">🌱</div>
+<div class="allergen-badge">🌾</div>
+<div class="allergen-badge">🥚</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- POSTRES -->
+<div class="sec">
+<div class="sec-hd"><div class="sec-ln"></div><div class="sec-tt">Postres</div><div class="sec-ln"></div></div>
+<div class="sec-items">
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Tarta de Manzana</div>
+<div class="dish-desc">Elaboración casera, tierna y aromática</div>
+<div class="dish-price">6 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌾</div>
+<div class="allergen-badge">🥚</div>
+<div class="allergen-badge">🥛</div>
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Baklava</div>
+<div class="dish-desc">Hojaldre crujiente con miel y pistacho, 2 uds.</div>
+<div class="dish-price">7 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌰</div>
+<div class="allergen-badge">🌾</div>
+<div class="allergen-badge">🥚</div>
+</div>
+</div>
+
+<div class="dish-card">
+<div class="dish-info">
+<div class="dish-name">Knafeh B05</div>
+<div class="dish-desc">Artesanal recién horneado (15 min) para dos personas</div>
+<div class="dish-price">16 €</div>
+</div>
+<div class="dish-allergens">
+<div class="allergen-badge">🌰</div>
+<div class="allergen-badge">🌾</div>
+<div class="allergen-badge">🥛</div>
+<div class="allergen-badge">🌱</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- WARNING -->
+<div class="warning-box">
+<strong>⚠ Importante:</strong> Todos nuestros platos contienen frutos secos y sésamo sin excepción.<br>Si padece alguna alergia, informe a nuestro personal antes de pedir. <strong>Los preparamos en la misma cocina donde se usan múltiples alérgenos.</strong>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="foot">
+<div class="foot-btns">
+<a class="foot-btn foot-wa" href="https://wa.me/34642914623">💬 Contactar por Alergias</a>
+<a class="foot-btn foot-back" href="index.html">← Volver al Inicio</a>
+</div>
+<div class="foot-copy">B05 · Lebanese Kitchen · Valencia</div>
+</div>
+
+</body>
+</html>
