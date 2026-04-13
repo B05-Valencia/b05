@@ -1,115 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B05 Valencia - Welcome</title>
-    <meta name="geo.position" content="39.4699; -0.3763">
-    <meta name="geo.placename" content="Valencia, Spain">
-    <meta name="geo.region" content="ES-VC">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="theme-color" content="#3A5C1E">
+<title>B05 — Lebanese Kitchen · Valencia</title>
 
-        /* General Styles */
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: url('background-image.jpg') no-repeat center center/cover;
-            font-family: 'Public Sans', sans-serif;
-            color: #fff;
-            text-align: center;
-            position: relative;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F1F1E6;
+  --bg2:#EAEADB;
+  --bg3:#E2E2D2;
+  --border:#C8C8AA;
+  --green:#3A5C1E;
+  --green-dk:#2A4414;
+  --green-lt:#567A2E;
+  --muted:#7A8A65;
+  --muted2:#9AAA88;
+  --gold:#C8A84A;
+  --f:'Public Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--green);font-family:var(--f);min-height:100vh;-webkit-font-smoothing:antialiased}
 
-        /* Background Overlay for better readabilityoo */
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-            z-index: 0;
-        }
+/* ── HERO ── */
+.hero{background:var(--green);padding:52px 24px 40px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:24px;background:var(--bg);clip-path:ellipse(55% 100% at 50% 100%)}
+.hero-eye{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:rgba(241,241,230,0.4);margin-bottom:16px;font-weight:600}
+.hero-logo{font-size:96px;font-weight:800;color:var(--bg);line-height:1;letter-spacing:-4px;margin-bottom:10px}
+.hero-sub{font-size:14px;font-weight:300;font-style:italic;color:rgba(241,241,230,0.55);padding-bottom:16px}
 
-        .container {
-            position: relative;
-            z-index: 1;
-            max-width: 400px;
-            width: 90%;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-        }
+/* ── LANG BAR ── */
+.lang{background:var(--bg2);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;justify-content:center;gap:6px;flex-wrap:wrap;position:sticky;top:0;z-index:200}
+.lb{font-family:var(--f);font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:7px 14px;border-radius:30px;border:1.5px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;text-decoration:none;transition:all .18s}
+.lb.on,.lb:hover{background:var(--green);color:var(--bg);border-color:var(--green)}
 
-        /* Button Container */
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
+/* ── CONTENT ── */
+.wrap{max-width:620px;margin:0 auto;padding:0 0 100px}
 
-        /* Buttons */
-        .button {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            font-size: 18px;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.7);
-            border: 2px solid white;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
+/* ── SECTION ── */
+.sec{padding:40px 20px 0}
+.sec-hd{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+.sec-ln{flex:1;height:1px;background:var(--border)}
+.sec-tt{font-size:11px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:var(--green);white-space:nowrap}
+.sec-note{font-size:12px;font-style:italic;color:var(--muted);text-align:center;margin-bottom:20px;margin-top:4px}
+.sec-items{margin-top:16px}
 
-        .button:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-            color: #fff;
-        }
+/* ── ITEM ── */
+.it{padding:16px 0;border-bottom:1px solid var(--border)}
+.it:last-child{border-bottom:none}
+.it-row{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:4px}
+.it-name{font-size:18px;font-weight:600;color:var(--green);line-height:1.15;flex:1}
+.it-price{font-size:16px;font-weight:300;color:var(--green-lt);white-space:nowrap;flex-shrink:0}
+.it-desc{font-size:13px;font-weight:300;color:var(--muted);line-height:1.65}
 
-        /* Contact Info */
-        .contact-info {
-            font-size: 18px;
-            font-weight: bold;
-        }
+/* ── VARIANTS ── */
+.vars{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.var{background:var(--bg2);border:1.5px solid var(--border);border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center}
+.var-l{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.3px}
+.var-p{font-size:17px;font-weight:600;color:var(--green)}
 
-        .contact-info a {
-            color: #FFD700;
-            text-decoration: none;
-            font-weight: bold;
-        }
+/* ── EXTRAS BOX ── */
+.extras{background:var(--bg2);border:1.5px solid var(--border);border-radius:12px;padding:16px 18px;margin:16px 0}
+.extras-tt{font-size:9px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--muted2);margin-bottom:12px}
+.extras-g{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ex{display:flex;justify-content:space-between;font-size:13px;padding:4px 0}
+.ex-n{color:var(--green);font-weight:400}
+.ex-p{color:var(--green-lt);font-weight:600}
 
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-    </style>
+/* ── EXPERIENCE CARDS ── */
+.exp{background:var(--green);border-radius:16px;padding:24px;margin-bottom:14px;position:relative;overflow:hidden}
+.exp::before{content:'';position:absolute;top:0;left:24px;right:24px;height:1px;background:rgba(241,241,230,0.15)}
+.exp-badge{display:inline-block;background:rgba(241,241,230,0.12);border:1px solid rgba(241,241,230,0.2);border-radius:20px;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(241,241,230,0.5);padding:4px 10px;margin-bottom:12px}
+.exp-name{font-size:22px;font-weight:700;color:var(--bg);line-height:1.1;margin-bottom:4px}
+.exp-price{font-size:14px;font-weight:300;font-style:italic;color:rgba(241,241,230,0.5);margin-bottom:18px}
+.exp-sep{height:1px;background:rgba(241,241,230,0.12);margin-bottom:18px}
+.exp-body{font-size:13px;font-weight:300;color:rgba(241,241,230,0.75);line-height:2}
+.exp-body strong{color:var(--bg);font-weight:700}
+
+/* ── TAPAS NOTE ── */
+.tapas-banner{background:var(--green-dk);color:var(--bg);text-align:center;padding:14px 20px;font-size:13px;font-weight:600;letter-spacing:.3px}
+.tapas-banner span{display:block;font-size:11px;font-weight:300;font-style:italic;color:rgba(241,241,230,0.55);margin-top:3px}
+
+/* ── DRINK ITEMS ── */
+.dk{padding:12px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.dk:last-child{border-bottom:none}
+.dk-n{font-size:15px;font-weight:500;color:var(--green);flex:1}
+.dk-d{font-size:11px;color:var(--muted);margin-top:2px}
+.dk-p{font-size:14px;font-weight:600;color:var(--green-lt);white-space:nowrap}
+
+/* ── ALLERGEN ── */
+.allrg{margin:32px 20px 0;padding:14px 18px;border:1.5px solid #C8A070;border-radius:10px;background:#FAF0E0;font-size:12px;color:#8A5018;line-height:1.7;text-align:center}
+.allrg strong{font-weight:700}
+
+/* ── FOOTER ── */
+.foot{padding:32px 20px;text-align:center;border-top:1px solid var(--border);margin-top:40px;background:var(--bg2)}
+.foot-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.foot-wa{display:inline-flex;align-items:center;gap:9px;background:#25D366;color:#fff;padding:14px 24px;border-radius:50px;font-size:14px;font-weight:700;text-decoration:none;letter-spacing:.3px}
+.foot-map{display:inline-flex;align-items:center;gap:8px;color:var(--green);text-decoration:none;font-size:14px;font-weight:700;padding:14px 24px;border:2px solid var(--green);border-radius:50px}
+.foot-copy{font-size:11px;color:var(--muted2);letter-spacing:1.5px;text-transform:uppercase}
+
+/* ── INDEX ── */
+.ix-hero{background:var(--green);padding:64px 24px 56px;text-align:center;position:relative;overflow:hidden}
+.ix-hero::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:28px;background:var(--bg);clip-path:ellipse(55% 100% at 50% 100%)}
+.ix-logo{font-size:110px;font-weight:800;color:var(--bg);line-height:1;letter-spacing:-5px}
+.ix-sub{font-size:14px;font-weight:300;font-style:italic;color:rgba(241,241,230,0.5);margin-top:8px;padding-bottom:20px}
+.ix-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:28px 20px 16px}
+.ix-card{background:var(--bg2);border:1.5px solid var(--border);border-radius:16px;padding:22px 16px;text-align:center;text-decoration:none;color:var(--green);display:flex;flex-direction:column;align-items:center;gap:8px;transition:all .2s}
+.ix-card:active{background:var(--green);color:var(--bg);border-color:var(--green)}
+.ix-card-flag{font-size:34px}
+.ix-card-name{font-size:17px;font-weight:700;line-height:1.1}
+.ix-card-sub{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.ix-card:active .ix-card-sub{color:rgba(241,241,230,0.55)}
+.ix-full{grid-column:1/-1;flex-direction:row!important;justify-content:center;gap:16px!important;padding:18px 20px!important}
+.ix-info{padding:0 20px 20px;display:flex;flex-direction:column;gap:8px}
+.ix-row{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--bg2);border:1.5px solid var(--border);border-radius:12px;text-decoration:none;color:var(--green);font-size:15px;font-weight:600}
+.ix-row:active{background:var(--green);color:var(--bg)}
+</style>
+
 </head>
 <body>
-
-    <div class="container">
-        <h1>Welcome to B05 Valencia</h1>
-        
-        <div class="button-container">
-           <a href="menuUS.html" class="button">🇬🇧 English</a>
-           <a href="menuFR.html" class="button">🇫🇷 Français</a>
-           <a href="menuES.html" class="button">🇪🇸 Español</a>
-            <a href="menu-desc.html" class="button">Special</a>
-            <a href="tapas-menu.html" class="button">Terrasse Menu</a> 
-            <a href="drink.html" class="button">Drinks</a>
-        </div>
-
-        <div class="contact-info">
-            <p>Whatsapp: <a href="Tel:+34642914623">(+34) 642 91 46 23</a></p>
-            <p><a href="https://maps.app.goo.gl/b5h1M2omhgeXZ7oa9" target="_blank">📍 Google Map</a></p>
-        </div>
-    </div>
-
-</body>
-</html>
+<div class="ix-hero">
+<div style="font-size:9px;letter-spacing:5px;text-transform:uppercase;color:rgba(241,241,230,0.4);margin-bottom:16px;font-weight:600">Valencia · Lebanese Kitchen</div>
+<div class="ix-logo">B05</div>
+<div class="ix-sub">Authentic flavours from Lebanon</div>
+</div>
+<div class="wrap">
+<div class="ix-grid">
+<a href="menuUS.html" class="ix-card"><div class="ix-card-flag">🇬🇧</div><div class="ix-card-name">English</div><div class="ix-card-sub">Menu</div></a>
+<a href="menuFR.html" class="ix-card"><div class="ix-card-flag">🇫🇷</div><div class="ix-card-name">Français</div><div class="ix-card-sub">Menu</div></a>
+<a href="menuES.html" class="ix-card"><div class="ix-card-flag">🇪🇸</div><div class="ix-card-name">Español</div><div class="ix-card-sub">Menú</div></a>
+<a href="drink.html" class="ix-card"><div class="ix-card-flag">🍷</div><div class="ix-card-name">Drinks</div><div class="ix-card-sub">Bebidas</div></a>
+<a href="tapas-menu.html" class="ix-card ix-full"><div class="ix-card-flag">🥙</div><div><div class="ix-card-name">Tapas · Until 20:00</div><div class="ix-card-sub" style="text-align:left;margin-top:4px">Mezze Libanesas · 3 € each</div></div></a>
+</div>
+<div class="ix-info">
+<a href="https://wa.me/34642914623" class="ix-row"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> &nbsp;WhatsApp · (+34) 642 91 46 23</a>
+<a href="https://maps.app.goo.gl/b5h1M2omhgeXZ7oa9" target="_blank" class="ix-row">📍 &nbsp;Find us on Google Maps</a>
+</div>
+<div style="text-align:center;padding:20px;font-size:10px;color:var(--muted2);letter-spacing:2px;text-transform:uppercase">B05 Lebanese Kitchen · Valencia</div>
+</div>
+</body></html>
