@@ -407,6 +407,11 @@
 
             // Open WhatsApp
             window.open(whatsappUrl, '_blank');
+
+            // Close this window after 1 second
+            setTimeout(function() {
+                window.close();
+            }, 1000);
         });
 
         // Set minimum date to today
