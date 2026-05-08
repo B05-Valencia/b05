@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve - B05 Restaurant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #3A5C1E;
+            --green-dark: #2c4616;
+            --cream: #F1F1E6;
+            --bg: #f4f3ef;
+            --card: #ffffff;
+            --border: #e2e0d8;
+            --text: #2c2c2a;
+            --text-muted: #7a7870;
+            --success: #25D366;
+            --radius: 10px;
+            --radius-sm: 6px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: var(--green);
+            color: var(--cream);
+            padding: 24px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .header p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-family: inherit;
+            color: var(--text);
+            background: var(--card);
+            transition: all 0.15s;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(58, 92, 30, 0.12);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .guests-control {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .guests-btn {
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: var(--radius-sm);
+            font-size: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.15s;
+            color: var(--text);
+        }
+
+        .guests-btn:hover {
+            background: var(--bg);
+            border-color: var(--green);
+        }
+
+        .guests-input {
+            flex: 1;
+            text-align: center;
+        }
+
+        .alert {
+            background: #E8F5E9;
+            border-left: 4px solid var(--green);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            margin-bottom: 18px;
+            font-size: 13px;
+            color: #2E7D32;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .alert-icon {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--success);
+            color: white;
+            padding: 14px 16px;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .btn-submit:hover {
+            background: #1AA754;
+        }
+
+        .btn-submit:active {
+            transform: scale(0.98);
+        }
+
+        .whatsapp-icon {
+            font-size: 20px;
+        }
+
+        .form-hint {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .footer {
+            display: flex;
+            gap: 16px;
+            margin-top: 28px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.15s;
+        }
+
+        .footer-link:hover {
+            color: var(--text);
+        }
+
+        .icon {
+            font-size: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 16px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .error-message {
+            color: #c62828;
+            font-size: 12px;
+            margin-top: 4px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Reserve your table</h1>
+        <p>B05 Restaurant · Lebanese Kitchen · Valencia</p>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <form id="reservationForm">
+                <div class="alert">
+                    <span class="alert-icon">✓</span>
+                    <span>Fill the form and send via WhatsApp</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Your name *</label>
+                    <input type="text" id="name" class="form-input" placeholder="Juan García" required>
+                    <div class="error-message" id="nameError">Please enter your name</div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Date *</label>
+                        <input type="date" id="date" class="form-input" required>
+                        <div class="error-message" id="dateError">Please select a date</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Time *</label>
+                        <input type="time" id="time" class="form-input" required>
+                        <div class="error-message" id="timeError">Please select a time</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Number of guests *</label>
+                    <div class="guests-control">
+                        <button type="button" class="guests-btn" onclick="changeGuests(-1)">−</button>
+                        <input type="number" id="guests" class="form-input guests-input" value="2" min="1" max="12" required>
+                        <button type="button" class="guests-btn" onclick="changeGuests(1)">+</button>
+                    </div>
+                    <div class="error-message" id="guestsError">Please select number of guests (1-12)</div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Special requests (optional)</label>
+                    <textarea id="notes" class="form-textarea" placeholder="Celebration, allergies, preferences..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <span class="whatsapp-icon">💬</span>
+                    Send via WhatsApp
+                </button>
+
+                <p class="form-hint">We'll confirm your reservation on WhatsApp</p>
+            </form>
+        </div>
+
+        <div class="footer">
+            <a href="tel:+34624170412" class="footer-link">
+                <span class="icon">📞</span>
+                Call us
+            </a>
+            <a href="https://maps.app.goo.gl/b5h1M2omhgeXZ7oa9" target="_blank" class="footer-link">
+                <span class="icon">📍</span>
+                Google Maps
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function changeGuests(n) {
+            const input = document.getElementById('guests');
+            const val = parseInt(input.value) + n;
+            if (val >= 1 && val <= 12) {
+                input.value = val;
+                clearError('guestsError');
+            }
+        }
+
+        function clearError(errorId) {
+            const errorEl = document.getElementById(errorId);
+            if (errorEl) {
+                errorEl.classList.remove('show');
+            }
+        }
+
+        function showError(errorId) {
+            const errorEl = document.getElementById(errorId);
+            if (errorEl) {
+                errorEl.classList.add('show');
+            }
+        }
+
+        document.getElementById('reservationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Clear all errors
+            document.querySelectorAll('.error-message').forEach(el => el.classList.remove('show'));
+
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const guests = document.getElementById('guests').value;
+            const notes = document.getElementById('notes').value.trim();
+
+            // Validate
+            let isValid = true;
+
+            if (!name) {
+                showError('nameError');
+                isValid = false;
+            }
+
+            if (!date) {
+                showError('dateError');
+                isValid = false;
+            }
+
+            if (!time) {
+                showError('timeError');
+                isValid = false;
+            }
+
+            if (!guests || guests < 1 || guests > 12) {
+                showError('guestsError');
+                isValid = false;
+            }
+
+            if (!isValid) return;
+
+            // Format date
+            const dateObj = new Date(date + 'T00:00:00');
+            const dateStr = dateObj.toLocaleDateString('es-ES', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit'
+            });
+
+            // Build WhatsApp message
+            let message = `Hola, me gustaría reservar una mesa\n\n`;
+            message += `Nombre: ${name}\n`;
+            message += `Fecha: ${dateStr}\n`;
+            message += `Hora: ${time}\n`;
+            message += `Personas: ${guests}\n`;
+            if (notes) {
+                message += `Notas: ${notes}\n`;
+            }
+
+            // Send to WhatsApp
+            const encoded = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/34624170412?text=${encoded}`;
+
+            // Open WhatsApp
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+    </script>
+</body>
+</html>
