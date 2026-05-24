@@ -340,7 +340,7 @@
         // ==================== CONFIGURATION ====================
         const WHATSAPP_NUMBER = '34624170412';
         const ADVANCE_BOOKING_DAYS = 7;  // Max 7 days ahead
-        const OPEN_BUFFER_MINUTES = 30;  // Allow booking from 30min before opening
+        const OPEN_BUFFER_MINUTES = 0;  // First slot starts at opening time
         const CLOSE_BUFFER_MINUTES = 30; // Don't allow booking within 30min of closing
         const TIME_SLOT_INTERVAL = 30;   // 30-minute slots
 
@@ -384,8 +384,8 @@
             const openMins = timeStringToMinutes(hours.open);
             const closeMins = timeStringToMinutes(hours.close);
 
-            // First slot starts 30min before opening
-            const firstSlot = openMins - OPEN_BUFFER_MINUTES;
+            // First slot is at opening time
+            const firstSlot = openMins;
             // Last slot is 30min before closing
             const lastSlot = closeMins - CLOSE_BUFFER_MINUTES;
 
