@@ -280,7 +280,9 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label">Time *</label>
-                        <input type="time" id="time" class="form-input" required>
+                        <select id="time" class="form-select" required>
+                            <option value="">Select a date first</option>
+                        </select>
                         <div class="error-message" id="timeError">Please select a time</div>
                     </div>
                 </div>
@@ -397,39 +399,32 @@
             return { slots, message };
         }
 
-        function renderTimeSlots(dateStr) {
-            const { slots, message } = getAvailableTimeSlots(dateStr);
-            
-            timeSlots.innerHTML = '';
-            hoursInfo.textContent = message;
-
+        function populateTimeDropdown(dateStr) {
+            const timeSelect = document.getElementById('time');
+            const { slots } = getAvailableTimeSlots(dateStr);
+            timeSelect.innerHTML = '';
             if (slots.length === 0) {
-                timeSlots.innerHTML = '<p style="grid-column: 1/-1; color: var(--error); font-size: 12px;">No available times</p>';
-                timeHint.textContent = '(No slots available)';
-                timeHiddenInput.value = '';
+                timeSelect.innerHTML = '<option value="">No times available</option>';
                 return;
             }
-
-            timeHint.textContent = `(${slots.length} slots)`;
-
-            slots.forEach(time => {
-                const btn = document.createElement('button');
-                btn.type = 'button';
-                btn.className = 'time-slot';
-                btn.textContent = time;
-                btn.dataset.time = time;
-
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
-                    btn.classList.add('selected');
-                    timeHiddenInput.value = time;
-                    clearError('timeError');
-                });
-
-                timeSlots.appendChild(btn);
+            const placeholder = document.createElement('option');
+            placeholder.value = '';
+            placeholder.textContent = 'Select a time...';
+            timeSelect.appendChild(placeholder);
+            slots.forEach(slot => {
+                const opt = document.createElement('option');
+                opt.value = slot;
+                opt.textContent = slot;
+                timeSelect.appendChild(opt);
             });
         }
+
+        document.getElementById('date').addEventListener('change', function() {
+            if (this.value) {
+                populateTimeDropdown(this.value);
+                clearError('timeError');
+            }
+        });
 
         function clearError(errorId) {
             const errorEl = document.getElementById(errorId);
@@ -466,7 +461,7 @@
                 isValid = false;
             }
 
-            if (!date) {
+            if (!date || date < today) {
                 showError('dateError');
                 isValid = false;
             }
