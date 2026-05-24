@@ -389,9 +389,16 @@
             // Last slot is 30min before closing
             const lastSlot = closeMins - CLOSE_BUFFER_MINUTES;
 
+            // If today, filter out slots already past
+            const now = new Date();
+            const isToday = dateStr === now.toISOString().split('T')[0];
+            const nowMins = isToday ? now.getHours() * 60 + now.getMinutes() : 0;
+
             const slots = [];
             for (let mins = firstSlot; mins <= lastSlot; mins += TIME_SLOT_INTERVAL) {
-                slots.push(minutesToTimeString(mins));
+                if (!isToday || mins > nowMins) {
+                    slots.push(minutesToTimeString(mins));
+                }
             }
 
             const message = `Open ${hours.open}-${hours.close} (booking from ${minutesToTimeString(firstSlot)} to ${minutesToTimeString(lastSlot)})`;
