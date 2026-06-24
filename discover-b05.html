@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+  <meta name="theme-color" content="#3A5C1E">
+  <title>B05 — Discover Lebanese Cuisine · Valencia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,300;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F1F1E6;
+      --bg2: #EAEADB;
+      --border: #C8C8AA;
+      --green: #3A5C1E;
+      --green-dk: #2A4414;
+      --green-lt: #567A2E;
+      --muted: #7A8A65;
+      --muted2: #9AAA88;
+      --gold: #C8A84A;
+      --f: 'Public Sans', system-ui, sans-serif;
+      --radius: 18px;
+      --touch: 48px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--green);
+      font-family: var(--f);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden
+    }
+
+    /* ── NAV ── */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      background: rgba(42, 68, 20, .97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: stretch;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .topbar::-webkit-scrollbar {
+      display: none
+    }
+
+    .pill {
+      flex: 0 0 auto;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      padding: 0 18px;
+      min-height: var(--touch);
+      display: inline-flex;
+      align-items: center;
+      color: rgba(241, 241, 230, .55);
+      text-decoration: none;
+      white-space: nowrap;
+      border-right: 1px solid rgba(241, 241, 230, .1);
+      transition: color .15s, background .15s;
+    }
+
+    .pill.active,
+    .pill:active {
+      color: var(--bg);
+      background: rgba(241, 241, 230, .1)
+    }
+
+    /* ── LAYOUT ── */
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 14px 80px
+    }
+
+    .sec {
+      padding: 32px 0 0
+    }
+
+    .sec-hd {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px
+    }
+
+    .sec-ln {
+      height: 1px;
+      background: var(--border);
+      flex: 1
+    }
+
+    .sec-tt {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: var(--muted)
+    }
+
+    /* ── LEAD CARD ── */
+    .lead-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(251, 2, 2, 0.22);
+      margin-bottom: 14px
+    }
+
+    .lead-img {
+      height: 360px;
+      background-image: var(--photo);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #1a2a0e;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .lead-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 90%, rgba(246, 246, 246, 0.88) 100%);
+    }
+
+    .lead-overlay {
+      position: relative;
+      z-index: 1;
+      padding: 0 20px 22px;
+      color: var(--bg);
+      width: 100%
+    }
+
+    .lead-tag {
+      display: inline-block;
+      border-radius: 20px;
+      padding: 4px 10px;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--green-dk);
+      margin-bottom: 10px
+    }
+
+    .lead-overlay h3 {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -.8px;
+      margin-bottom: 5px
+    }
+
+    .lead-price {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--gold)
+    }
+
+    .lead-body {
+      background: #fff;
+      padding: 16px 20px;
+      color: var(--green)
+    }
+
+    .lead-body p {
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 14px
+    }
+
+    .checks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 16px
+    }
+
+    .check {
+      font-size: 12px;
+      color: var(--green);
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: #f5f5ec;
+      border: 1px solid var(--border);
+      line-height: 1.3
+    }
+
+    /* ── BTN ── */
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 50px;
+      padding: 0 22px;
+      min-height: var(--touch);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .3px;
+      transition: opacity .15s, transform .1s;
+    }
+
+    .btn:active {
+      opacity: .8;
+      transform: scale(.98)
+    }
+
+    .btn.gold {
+      background: var(--gold);
+      color: var(--green-dk)
+    }
+
+    .btn.wa {
+      background: #25D366;
+      color: #fff
+    }
+
+    .btn.outline {
+      border: 1.5px solid var(--green);
+      color: var(--green)
+    }
+
+    .lead-body .btn {
+      width: 100%
+    }
+
+    /* ── CARD GRID ── */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--bg2);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(42, 68, 20, .1);
+      transition: transform .15s
+    }
+
+    .card:active {
+      transform: scale(.985)
+    }
+
+    .img {
+      height: 220px;
+      background: var(--photo) center/cover
+    }
+
+    .body {
+      padding: 14px 16px 16px
+    }
+
+    .small-tag {
+      display: block;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted2);
+      margin-bottom: 6px
+    }
+
+    .body h3 {
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 0;
+      letter-spacing: -.3px
+    }
+
+    .body .price {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 0;
+      white-space: nowrap
+    }
+
+    .card-hd {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 6px
+    }
+
+    .body p {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--muted)
+    }
+
+    /* mezze compact */
+    .compact .img {
+      height: 170px
+    }
+
+    .compact .body h3 {
+      font-size: 16px
+    }
+
+    .compact .body .price {
+      font-size: 14px
+    }
+
+    /* ── ALLERGEN ── */
+    .allrg {
+      margin: 36px 0 0;
+      padding: 14px 16px;
+      border: 1.5px solid #C8A070;
+      border-radius: 12px;
+      background: #FAF0E0;
+      font-size: 12px;
+      color: #8A5018;
+      line-height: 1.7;
+      text-align: center
+    }
+
+    /* ── FOOTER ── */
+    .foot {
+      padding: 28px 16px 40px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      background: var(--bg2)
+    }
+
+    .foot-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px
+    }
+
+    .foot-btns .btn {
+      width: 100%
+    }
+
+    .copy {
+      font-size: 11px;
+      color: var(--muted2);
+      letter-spacing: 1.5px;
+      text-transform: uppercase
+    }
+
+    /* ── TABLET+ ── */
+    @media(min-width:560px) {
+      .foot-btns {
+        flex-direction: row;
+        justify-content: center
+      }
+
+      .foot-btns .btn {
+        width: auto
+      }
+    }
+
+    @media(min-width:640px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="topbar">
+    <a class="pill active" href="#experiences">Experiences</a>
+    <a class="pill" href="#bbq">BBQ</a>
+    <a class="pill" href="#ribbons">Ribbons</a>
+    <a class="pill" href="#mezze">Mezze</a>
+    <a class="pill" href="#desserts">Desserts</a>
+    <a class="pill" href="menuUS.html">Full Menu</a>
+  </nav>
+
+  <main class="wrap">
+
+    <!-- EXPERIENCES -->
+    <section class="sec" id="experiences">
+      <div class="sec-hd">
+        <div class="sec-ln"></div>
+        <div class="sec-tt">👑 Signature Experiences</div>
+        <div class="sec-ln"></div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <img src="img/complete-mezza.jpg" alt="Menu Mezze Feast" style="width:100%;display:block">
+          <div class="body">
+            <span class="small-tag">Signature · For sharing</span>
+            <h3>Grand Lebanese Feast</h3>
+            <div class="price">35 € / person · Min. 2</div>
+            <p>Cold mezze · Hot mezze · Fattoush · Taouk + Mechwi BBQ · Aioli · Lebanese sauce · Potato wedges</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="img/menu-experiancia.jpg" alt="Lebanese Experience" style="width:100%;display:block">
+          <div class="body">
+            <span class="small-tag">Most popular</span>
+            <div class="card-hd"><h3>Lebanese Experience</h3><span class="price">26 € / person</span></div>
+            <p>Hummus, aubergine, falafel, vine leaves, pastries, fresh salad, chicken ribbons and potato wedges.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="img/vegetariano.jpg" alt="Vegetarian Plate" style="width:100%;display:block">
+          <div class="body">
+            <span class="small-tag">Vegetarian</span>
+            <div class="card-hd"><h3>Vegetarian Plate</h3><span class="price">26 €</span></div>
+            <p>Hummus, aubergine and fragrant Lebanese rice, with falafel, vine leaves, artisan spinach pastry and cheese roll. Served with mixed salad and house vinaigrette.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BBQ -->
+    <section class="sec" id="bbq">
+      <div class="sec-hd">
+        <div class="sec-ln"></div>
+        <div class="sec-tt">🔥 Charcoal BBQ</div>
+        <div class="sec-ln"></div>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="img" style="--photo:url('img/mixed-grill.jpg')" style="width:100%;display:block" ></div>
+          <div class="body">
+            <span class="small-tag">For two</span>
+            <div class="card-hd"><h3>Mixed Grill for Two</h3><span class="price">49 €</span></div>
+            <p>Four skewers of Taouk and Mechwi with aubergine, wedges, salad, bread and sauces.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="img" style="--photo:url('img/taouk.jpg');style="width:100%;display:block" ; height:250px></div>
+          <div class="body">
+            <span class="small-tag">Chicken BBQ</span>
+            <div class="card-hd"><h3>Taouk</h3><span class="price">20 € · 35 €</span></div>
+            <p>Premium chicken skewers marinated in Lebanese spices with homemade garlic sauce.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="img" style="--photo:url('img/mechwi.jpg')"></div>
+          <div class="body">
+            <span class="small-tag">Beef BBQ</span>
+            <div class="card-hd"><h3>Mechwi</h3><span class="price">25 € · 45 €</span></div>
+            <p>Selected beef skewers with Lebanese spices and a subtle smoky note.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- RIBBONS -->
+    <section class="sec" id="ribbons">
+      <div class="sec-hd">
+        <div class="sec-ln"></div>
+        <div class="sec-tt">🥩 Lebanese Ribbons</div>
+        <div class="sec-ln"></div>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="img" style="--photo:url('img/mixed-ribbons.jpg')"></div>
+          <div class="body">
+            <span class="small-tag">For two</span>
+            <div class="card-hd"><h3>Mixed Ribbons for Two</h3><span class="price">47 €</span></div>
+            <p>Chicken and beef ribbons with hummus, wedges, salad, bread and house sauces.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="img" style="--photo:url('img/beef-ribbons.jpg')"></div>
+          <div class="body">
+            <span class="small-tag">Premium beef</span>
+            <div class="card-hd"><h3>Beef Ribbons</h3><span class="price">24 € · 39 €</span></div>
+            <p>Fine ribbons of premium beef sirloin, Lebanese-style, with a small salad.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="img" style="--photo:url('img/chicken-ribbons.jpg')"></div>
+          <div class="body">
+            <span class="small-tag">Chicken</span>
+            <div class="card-hd"><h3>Chicken Ribbons</h3><span class="price">20 € · 34 €</span></div>
+            <p>Fine strips of chicken marinated with lemon, garlic and Lebanese spices.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- MEZZE -->
+    <section class="sec" id="mezze">
+      <div class="sec-hd">
+        <div class="sec-ln"></div>
+        <div class="sec-tt">🧆 Traditional Mezze</div>
+        <div class="sec-ln"></div>
+      </div>
+      <div class="grid compact">
+        <article class="card">
+          <div class="img" style="--photo:url('img/hummus-classico.jpg')"></div>
+          <div class="body">
+            <div class="card-hd"><h3>Hummus Clásico</h3><span class="price">10 €</span></div>
+            <p>Chickpea cream with tahini, garlic and lemon.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="img" style="--photo:url('img/hummus-thalia.jpg')"></div>
+          <div class="body">
+            <div class="card-hd"><h3>Hummus Talía</h3><span class="price">13 €</span></div>
+            <p>Fresh basil, pistachio and infused oil.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="img" style="--photo:url('img/beiruti.jpg')"></div>
+          <div class="body">
+            <div class="card-hd"><h3>Hummus Beirutí</h3><span class="price">15 €</span></div>
+            <p>With sautéed premium Angus beef and Italian pine nuts.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="img" style="--photo:url('img/kebbe.jpg')"></div>
+          <div class="body">
+            <div class="card-hd"><h3>Kebbe</h3><span class="price">11 €</span></div>
+            <p>Crisp meat and bulgur croquette · 3 pcs.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="img" style="--photo:url('img/stuffed-vine-leaves.jpg')"></div>
+          <div class="body">
+            <div class="card-hd"><h3>Stuffed Vine Leaves</h3><span class="price">11 €</span></div>
+            <p>Vine leaves filled with rice, tomato and lemon.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="img" style="--photo:url('img/batahara.jpeg')"></div>
+          <div class="body">
+            <div class="card-hd"><h3>Batata Harra</h3><span class="price">12 €</span></div>
+            <p>Golden potatoes with garlic, coriander and lemon.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="img" style="--photo:url('img/falafel.jpg')"></div>
+          <div class="body">
+            <div class="card-hd"><h3>Falafel</h3><span class="price">12 €</span></div>
+            <p>Traditional chickpea falafel with fresh parsley · 5 pcs.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- DESSERTS -->
+    <section class="sec" id="desserts">
+      <div class="sec-hd">
+        <div class="sec-ln"></div>
+        <div class="sec-tt">🍯 Lebanese Desserts</div>
+        <div class="sec-ln"></div>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="img" style="--photo:url('img/baklava.jpg')"></div>
+          <div class="body">
+            <span class="small-tag">Traditional</span>
+            <div class="card-hd"><h3>Baklava</h3><span class="price">7 €</span></div>
+            <p>Crisp filo pastry with honey and pistachio · 2 pcs.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="img" style="--photo:url('img/kanafe.jpg')"></div>
+          <div class="body">
+            <span class="small-tag">Freshly baked · 15 min</span>
+            <div class="card-hd"><h3>Knafeh B05</h3><span class="price">16 €</span></div>
+            <p>Homemade, baked to order · For two guests.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="allrg"><strong>⚠ Important:</strong> All our dishes contain nuts and sesame without exception.<br>Please
+      inform our team of any allergies before ordering.</div>
+
+  </main>
+
+  <footer class="foot">
+    <div class="foot-btns">
+      <a class="btn wa" href="https://wa.me/34642914623">Reserve a table</a>
+      <a class="btn outline" href="menuUS.html">Full menu</a>
+      <a class="btn outline" href="https://maps.app.goo.gl/b5h1M2omhgeXZ7oa9" target="_blank">Find us</a>
+    </div>
+    <div class="copy">B05 · Lebanese Kitchen · Valencia</div>
+  </footer>
+
+</body>
+
+</html>
